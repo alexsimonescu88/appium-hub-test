@@ -1,0 +1,18 @@
+Steps to Run tests locally in InteliJss:
+1. Open new terminal and start appium server by running cmd: appium
+2. Run IOS simulator with correct information for e.g:
+- appium:udid should be the ios simulator or device from xcode by doing the following steps:
+ - open xcode > click on Window in toolbar > Devices aand simulators > select device or simualtor and copy Identifier
+
+        var options = new BaseOptions()
+                .amend("platformName", "iOS")
+                .amend("appium:udid", "D01C27B5-B82F-431E-A572-5D2279579A95")
+                .amend("appium:automationName", "XCUITest")
+                .amend("appium:includeSafariInWebviews", true)
+                .amend("appium:newCommandTimeout", 3600)
+                .amend("appium:connectHardwareKeyboard", true);
+
+        driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
+
+
+Appium inpector is used to get the locators for elements

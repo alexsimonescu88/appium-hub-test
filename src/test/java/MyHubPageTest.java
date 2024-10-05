@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class SampleTest {
+public class MyHubPageTest {
 
     private IOSDriver driver;
 
@@ -27,12 +27,19 @@ public class SampleTest {
     }
 
     @Test
-    public void sampleTest() {
-        // Find the input element and interact with it
+    public void Click_Activity_Search_From_HomePage_And_No_Activities_Should_Display_NoActivitiesFound() {
+        // Arrange
         WebElement inputField = driver.findElement (new By.ById( "Activity Search"));
 
-        inputField.click ();
+        inputField.click();
 
+        WebElement noActivityFound = driver.findElement (new By.ById( "No Activities Found"));
+
+        // Assert
+        assert(noActivityFound.isDisplayed());
+
+       String noActivityFoundText = noActivityFound.getText();
+       assert(noActivityFoundText.equals("No Activities Found"));
     }
 
     @After
