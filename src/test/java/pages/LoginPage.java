@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
+    @FindBy(xpath = "")
+    private WebElement loginTitle;
+
     @FindBy(id = "pin")
     private WebElement pinField;
 
@@ -23,5 +26,9 @@ public class LoginPage {
 
     public void clickLoginButton() {
         loginButton.click();
+    }
+
+    public String getLoginTitle() {
+        return loginTitle.getText();
     }
 }

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PropertySearchPage {
     @FindBy(xpath = "//XCUIElementTypeButton[@name=\"My hub\"]")
-    private WebElement homePageButton;
+    private WebElement myHubPageButton;
 
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Enter text to search properties.\"]")
     private WebElement propertiesSearchMessage;
@@ -16,8 +16,8 @@ public class PropertySearchPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void navigateBackToHomePage() {
-        homePageButton.click();
+    public void navigateBackToMyHubPage() {
+        myHubPageButton.click();
     }
 
     public String getMessageFromSearchProperties() {

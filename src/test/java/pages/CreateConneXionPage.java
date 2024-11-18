@@ -5,19 +5,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ContactSearchPage {
+public class CreateConneXionPage {
 
     @FindBy(xpath = "//XCUIElementTypeButton[@name=\"My hub\"]")
     private WebElement myHubPageButton;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"No contacts available\"]")
+    @FindBy(xpath = "//XCUIElementTypeSearchField[@name=\"Search\"]")
+    private WebElement conneXionSearchField;
+
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"All\"]")
+    private WebElement conneXionAllButton;
+
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"My\"]")
+    private WebElement conneXionMyButton;
+
+    @FindBy(name = "No contacts available")
     private WebElement noContactsAvailableText;
-
-    @FindBy(name = "My")
-    private WebElement myContactsButton;
-
-    @FindBy(name = "All")
-    private WebElement allContactsButton;
 
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"My contacts\"]")
     private WebElement myContactsTitle;
@@ -25,7 +28,10 @@ public class ContactSearchPage {
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"All contacts\"]")
     private WebElement allContactsTitle;
 
-    public ContactSearchPage(WebDriver driver) {
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Clear filters\"]")
+    private WebElement clearFiltersButton;
+
+    public CreateConneXionPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
@@ -37,19 +43,19 @@ public class ContactSearchPage {
         return noContactsAvailableText.getText();
     }
 
-    public void selectMyContacts() {
-        myContactsButton.click();
-    }
-
-    public void selectAllContacts() {
-        allContactsButton.click();
-    }
-
     public String getMyContactsTitle() {
         return myContactsTitle.getText();
     }
 
     public String getAllContactsTitle() {
         return allContactsTitle.getText();
+    }
+
+    public void selectMyContacts() {
+        conneXionMyButton.click();
+    }
+
+    public void selectAllContacts() {
+        conneXionAllButton.click();
     }
 }

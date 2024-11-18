@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class CreateContactPage {
 
     @FindBy(xpath = "//XCUIElementTypeButton[@name=\"My hub\"]")
-    private WebElement homePageButton;
+    private WebElement myHubPageButton;
 
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Duplicate check\"]")
     private WebElement duplicateCheckText;
@@ -20,8 +20,8 @@ public class CreateContactPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void navigateBackToHomePage() {
-        homePageButton.click();
+    public void navigateBackToMyHubPage() {
+        myHubPageButton.click();
     }
 
     public String getDuplicateCheckText() {

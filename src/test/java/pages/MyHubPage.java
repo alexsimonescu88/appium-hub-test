@@ -5,30 +5,30 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class MyHubPage {
 
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"My hub\"]")
     private WebElement myHubNavigatorBarTitle;
 
-    @FindBy(id = "Appointments")
+    @FindBy(name = "Appointments")
     private WebElement appointmentsLabel;
 
-    @FindBy(xpath = "(//XCUIElementTypeImage[@name=\"chevron.down\"])[1]")
+    @FindBy(name = "chevron.down")
     private WebElement appointmentsChevronDown;
 
-    @FindBy(xpath = "(//XCUIElementTypeImage[@name=\"chevron.up\"])[1]")
+    @FindBy(name = "chevron.up")
     private WebElement appointmentsChevronUp;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Yesterday\"]")
+    @FindBy(name = "Yesterday")
     private WebElement appointmentsYesterdayButton;
 
-    @FindBy(xpath = "(//XCUIElementTypeStaticText[@name=\"Today\"])[1]")
+    @FindBy(name = "Today")
     private WebElement appointmentsTodayButton;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Tomorrow\"]")
+    @FindBy(name = "Tomorrow")
     private WebElement appointmentsTomorrowButton;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"No items\"]")
+    @FindBy(name = "No items")
     private WebElement appointmentsNoItemsText;
 
     @FindBy(id = "")
@@ -43,14 +43,17 @@ public class HomePage {
     @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"hub Uat\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[2]")
     private WebElement favouritesScrollView;
 
-    @FindBy(id = "")
+    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"My Callbacks\"]")
     private WebElement myCallbacksLabel;
 
-    @FindBy(xpath = "(//XCUIElementTypeImage[@name=\"chevron.down\"])[2]")
+    @FindBy(xpath = "//XCUIElementTypeImage[@name=\"chevron.down\"]")
     private WebElement myCallbacksChevronDown;
 
-    @FindBy(xpath = "(//XCUIElementTypeImage[@name=\"chevron.up\"])[2]")
+    @FindBy(xpath = "//XCUIElementTypeImage[@name=\"chevron.up\"]")
     private WebElement myCallbacksChevronUp;
+
+    @FindBy(xpath = "//XCUIElementTypeImage[@name=\"chevron.right\"]")
+    private WebElement selectionOptions;
 
     @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Activity \"]")
     private WebElement callbacksActivityButton;
@@ -61,10 +64,10 @@ public class HomePage {
     @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Not Instructed\"]")
     private WebElement callbacksNotInstructedButton;
 
-    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Requirement \"]")
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Requirement\"]")
     private WebElement callbacksRequirementButton;
 
-    @FindBy(xpath = "(//XCUIElementTypeStaticText[@name=\"Today\"])[2]")
+    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Today\"]")
     private WebElement callbacksTodayButton;
 
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Upcoming\"]")
@@ -109,7 +112,7 @@ public class HomePage {
     @FindBy(id = "wealth_report")
     private WebElement theWealthReportButton;
 
-    public HomePage(WebDriver driver) {
+    public MyHubPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
@@ -117,12 +120,92 @@ public class HomePage {
         return myHubNavigatorBarTitle.getText();
     }
 
-    public void expandAppointment() {
+    public void expandAppointments() {
         appointmentsChevronDown.click();
     }
 
-    public void collapseAppointment() {
+    public String getAppointmentsNoItemsText() {
+        return appointmentsNoItemsText.getText();
+    }
+
+    public void selectAppointmentsToday() {
+        appointmentsTodayButton.click();
+    }
+
+    public void selectAppointmentsYesterday() {
+        appointmentsYesterdayButton.click();
+    }
+
+    public void selectAppointmentsTomorrow() {
+        appointmentsTomorrowButton.click();
+    }
+
+    public boolean appointmentsTodayIsEnabled() {
+        return appointmentsTodayButton.isEnabled();
+    }
+
+    public boolean appointmentsYesterdayIsEnabled() {
+        return appointmentsYesterdayButton.isEnabled();
+    }
+
+    public boolean appointmentsTomorrowIsEnabled() {
+        return appointmentsTomorrowButton.isEnabled();
+    }
+
+    public void collapseAppointments() {
         appointmentsChevronUp.click();
+    }
+
+    public void expandMyCallbacks() {
+        myCallbacksChevronDown.click();
+    }
+
+    public String getCallbacksNoCallbacksText() {
+        return callbacksNoCallbacksText.getText();
+    }
+
+    public void selectCallbacksActivity() {
+        callbacksActivityButton.click();
+    }
+
+    public void selectCallbacksKeepInTouch() {
+        callbacksKeepInTouchButton.click();
+    }
+
+    public void selectCallbacksNotInstructed() {
+        callbacksNotInstructedButton.click();
+    }
+
+    public void selectCallbacksRequirement() {
+        callbacksRequirementButton.click();
+    }
+
+    public void selectCallbacksToday() {
+        callbacksTodayButton.click();
+    }
+
+    public void selectCallbacksUpcoming() {
+        callbacksUpcomingButton.click();
+    }
+
+    public void selectCallbacksOverdue() {
+        callbacksOverdueButton.click();
+    }
+
+    public void collapseCallbacks() {
+        myCallbacksChevronUp.click();
+    }
+
+    public void openSelectionOptions() {
+        selectionOptions.click();
+    }
+
+    public String getMyCallbacksTitle() {
+        return myCallbacksLabel.getText();
+    }
+
+    public void exitSelection() {
+        myCallbacksLabel.click();
     }
 
     public void openActivitySearch() {
@@ -143,5 +226,13 @@ public class HomePage {
 
     public void openCreateContact() {
         createContactLink.click();
+    }
+
+    public void openCreateConneXion() {
+        createConneXionLink.click();
+    }
+
+    public void openTheViewLink() {
+        theViewButton.click();
     }
 }

@@ -8,17 +8,17 @@ import org.openqa.selenium.support.PageFactory;
 public class RequirementsSearchPage {
 
     @FindBy(xpath = "//XCUIElementTypeButton[@name=\"My hub\"]")
-    private WebElement homePageButton;
+    private WebElement myHubPageButton;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"No Requirements Found\"]")
+    @FindBy(name = "No Requirements Found")
     private WebElement noRequirementsFoundText;
 
     public RequirementsSearchPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public void navigateBackToHomePage() {
-        homePageButton.click();
+    public void navigateBackToMyHubPage() {
+        myHubPageButton.click();
     }
 
     public String getNoRequirementsFoundText() {
