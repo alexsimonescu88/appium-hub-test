@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="iOSAutomationSuite">
+    <parameter name="platform" value="iOS" />
+    <test name="iOSTests">
+        <classes>
+            <class name="org.knight.automation.tests.ios.LoginPageTests" />
+            <class name="org.knight.automation.tests.ios.MyHubPageTests" />
+            <class name="org.knight.automation.tests.ios.ActivitySearchPageTests" />
+        </classes>
+    </test>
+</suite>

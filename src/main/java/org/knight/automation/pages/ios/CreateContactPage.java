@@ -1,0 +1,34 @@
+package org.knight.automation.pages.ios;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class CreateContactPage {
+
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"My hub\"]")
+    private WebElement myHubPageButton;
+
+    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Duplicate check\"]")
+    private WebElement duplicateCheckText;
+
+    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Search\"]")
+    private WebElement searchTitle;
+
+    public CreateContactPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
+
+    public void navigateBackToMyHubPage() {
+        myHubPageButton.click();
+    }
+
+    public String getDuplicateCheckText() {
+        return duplicateCheckText.getText();
+    }
+
+    public String getSearchTitleText() {
+        return searchTitle.getText();
+    }
+}

@@ -21,8 +21,72 @@
             <artifactId>testng</artifactId>
             <version>7.10.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.22.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.6</version>
+        </dependency>
 
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>ios</id>
+            <properties>
+                <configFile>src/test/resources/config-ios.properties</configFile>
+                <testSuite>src/test/resources/testng-ios.xml</testSuite>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>android</id>
+            <properties>
+                <configFile>src/test/resources/config-android.properties</configFile>
+                <testSuite>src/test/resources/testng-android.xml</testSuite>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>web-chrome</id>
+            <properties>
+                <configFile>src/test/resources/config-web-chrome.properties</configFile>
+                <testSuite>src/test/resources/testng-web-chrome.xml</testSuite>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>web-firefox</id>
+            <properties>
+                <configFile>src/test/resources/config-web-firefox.properties</configFile>
+                <testSuite>src/test/resources/testng-web-firefox.xml</testSuite>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>web-safari</id>
+            <properties>
+                <configFile>src/test/resources/config-web-safari.properties</configFile>
+                <testSuite>src/test/resources/testng-web-safari.xml</testSuite>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>web-edge</id>
+            <properties>
+                <configFile>src/test/resources/config-web-edge.properties</configFile>
+                <testSuite>src/test/resources/testng-web-edge.xml</testSuite>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <plugin>
@@ -30,12 +94,17 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.3.1</version>
                 <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/*Tests.java</include>
-                    </includes>
+                    <suiteXmlFiles>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <suiteXmlFile>${testSuite}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <configFile>${configFile}</configFile>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>

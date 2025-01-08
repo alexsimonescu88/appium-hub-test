@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="FirefoxAutomationSuite">
+    <parameter name="platform" value="web" />
+    <parameter name="browser" value="firefox" />
+    <test name="FirefoxTests">
+        <classes>
+            <class name="org.knight.automation.tests.web.WebTest" />
+        </classes>
+    </test>
+</suite>
