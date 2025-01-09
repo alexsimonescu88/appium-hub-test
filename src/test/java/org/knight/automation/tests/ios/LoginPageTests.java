@@ -8,40 +8,40 @@ import org.testng.annotations.Test;
 
 public class LoginPageTests extends BaseTest {
 
-    @Test(priority = 2)
-    public void testLoginWithValidCredentials_ShouldLoginSuccessfully() {
-        LoginPage loginPage = new LoginPage(driver);
-        Assert.assertEquals(loginPage.getPinInputField().getText(), "Enter PIN");
-
-        loginPage.getPinInputField().sendKeys("200188");
-
-        loginPage.getLoginButton().click();
-        MyHubPage myHubPage = new MyHubPage(driver);
-        Assert.assertTrue(myHubPage.getMyHubNavigatorBarTitle().isDisplayed());
-    }
-
-    @Test(priority = 1)
+    @Test
     public void testLoginWithInvalidCredentials_ShouldShowErrorMessage() {
 
         LoginPage loginPage = new LoginPage(driver);
         Assert.assertTrue(loginPage.getPinLabel().isDisplayed());
 
-        var incorrectPinInput = "11111";
-        var pinInputFieldPlaceholder = loginPage.getPinInputField().getText();
-        Assert.assertTrue(loginPage.getPinInputField().isDisplayed());
+        String incorrectPinInput = "11111";
+        String pinFieldPlaceholder = loginPage.getPinField().getText();
+        Assert.assertTrue(loginPage.getPinField().isDisplayed());
 
-        loginPage.getPinInputField().sendKeys(incorrectPinInput);
+        loginPage.getPinField().sendKeys(incorrectPinInput);
         Assert.assertEquals(incorrectPinInput, "11111");
 
         loginPage.getLoginButton().click();
-        var incorrectPinMessageText = loginPage.getIncorrectPinMessageText();
+        String incorrectPinMessageText = loginPage.getIncorrectPinMessage().getText();
         Assert.assertTrue(loginPage.getIncorrectPinMessage().isDisplayed());
         Assert.assertEquals(incorrectPinMessageText, "PIN incorrect. Try again.");
 
         loginPage.getIncorrectPinOkButton().click();
         Assert.assertEquals(incorrectPinInput, "11111");
 
-        loginPage.getPinInputField().clear();
-        Assert.assertEquals(pinInputFieldPlaceholder, "Enter PIN");
+        loginPage.getPinField().clear();
+        Assert.assertEquals(pinFieldPlaceholder, "Enter PIN");
+    }
+
+    @Test(priority = 1)
+    public void testLoginWithValidCredentials_ShouldLoginSuccessfully() {
+        LoginPage loginPage = new LoginPage(driver);
+        Assert.assertEquals(loginPage.getPinField().getText(), "Enter PIN");
+
+        loginPage.getPinField().sendKeys("200188");
+
+        loginPage.getLoginButton().click();
+        MyHubPage myHubPage = new MyHubPage(driver);
+        Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
     }
 }

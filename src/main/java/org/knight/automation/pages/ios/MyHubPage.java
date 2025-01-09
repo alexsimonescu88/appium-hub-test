@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class MyHubPage extends BasePage {
 
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"My hub\"]")
-    private WebElement myHubNavigatorBarTitle;
+    private WebElement myHubLabel;
 
     @FindBy(id = "Appointments")
     private WebElement appointmentsLabel;
@@ -29,97 +29,106 @@ public class MyHubPage extends BasePage {
     @FindBy(id = "Tomorrow")
     private WebElement appointmentsTomorrowButton;
 
-    @FindBy(id = "No items")
-    private WebElement appointmentsNoItemsText;
-
-    @FindBy(id = "Mobile testing check in ")
-    private WebElement appointmentMobileTestingText;
-
-    @FindBy(id = "Mobile Backlog Review")
-    private WebElement appointmentsMobileBacklogText;
+//    @FindBy(id = "No items")
+//    private WebElement appointmentsNoItemsText;
+//
+//    @FindBy(id = "Mobile testing check in ")
+//    private WebElement appointmentMobileTestingText;
+//
+//    @FindBy(id = "Mobile Backlog Review")
+//    private WebElement appointmentsMobileBacklogText;
 
     @FindBy(id = "Favourites")
     private WebElement favouritesLabel;
 
-    @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"hub Uat\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[2]")
+    @FindBy(id = "Redlap House, Redlap, Dartmouth, TQ6 0JR")
+    private WebElement favouritesLastCard;
+
+    @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"hub Uat\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView")
     private WebElement favouritesScrollView;
 
     @FindBy(id = "My Callbacks")
     private WebElement myCallbacksLabel;
 
-    @FindBy(id = "chevron.down")
+    @FindBy(xpath = "(//XCUIElementTypeImage[@name=\"chevron.down\"])[2]")
     private WebElement myCallbacksChevronDown;
 
     @FindBy(id = "chevron.up")
     private WebElement myCallbacksChevronUp;
 
-    @FindBy(xpath = "//XCUIElementTypeImage[@name=\"chevron.right\"]")
+    @FindBy(id = "chevron.right")
     private WebElement selectionOptions;
 
-    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Activity \"]")
+    @FindBy(id = "Activity ")
     private WebElement callbacksActivityButton;
 
-    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Keep In Touch\"]")
+    @FindBy(id = "Keep In Touch")
     private WebElement callbacksKeepInTouchButton;
 
-    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Not Instructed\"]")
+    @FindBy(id = "Not Instructed")
     private WebElement callbacksNotInstructedButton;
 
-    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Requirement\"]")
+    @FindBy(id = "Requirement ")
     private WebElement callbacksRequirementButton;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Today\"]")
+    @FindBy(id = "Today")
     private WebElement callbacksTodayButton;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Upcoming\"]")
+    @FindBy(id = "Upcoming")
     private WebElement callbacksUpcomingButton;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Overdue\"]")
+    @FindBy(id = "Overdue")
     private WebElement callbacksOverdueButton;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"No Callbacks\"]")
+    @FindBy(id = "No Callbacks")
     private WebElement callbacksNoCallbacksText;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Explore hub Mobile\"]")
-    private WebElement exploreHubMobileText;
+    @FindBy(id = "Explore hub Mobile")
+    private WebElement exploreHubMobileLabel;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"hub Quick Links\"]")
-    private WebElement hubQuickLinksText;
+    @FindBy(id = "hub Quick Links")
+    private WebElement hubQuickLinksLabel;
 
-    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Activity Search\"]")
-    private WebElement activitySearchLink;
+    @FindBy(id = "Home_Button_QuickLinkActivity")
+    private WebElement activitySearchButton;
 
-    @FindBy(id = "Requirement Search")
-    private WebElement requirementSearchLink;
+    @FindBy(id = "Home_Button_QuickLinkRequirement")
+    private WebElement requirementSearchButton;
 
-    @FindBy(id = "Property Search")
-    private WebElement propertySearchLink;
+    @FindBy(id = "Home_Button_QuickLinkProperty")
+    private WebElement propertySearchButton;
 
-    @FindBy(id = "Contact Search")
-    private WebElement contactSearchLink;
+    @FindBy(id = "Home_Button_QuickLinkContact")
+    private WebElement contactSearchButton;
 
-    @FindBy(id = "Create a Contact")
-    private WebElement createContactLink;
+    @FindBy(id = "Home_Button_QuickLinkCreateContact")
+    private WebElement createContactButton;
 
-    @FindBy(id = "Create a ConneXion")
-    private WebElement createConneXionLink;
+    @FindBy(id = "Home_Button_QuickLinkCreateConnexion")
+    private WebElement createConneXionButton;
 
     @FindBy(id = "Knight Frank Links")
-    private WebElement knightFrankLinksText;
+    private WebElement knightFrankLinksLabel;
 
-    @FindBy(id = "the_view")
+    @FindBy(id = "Home_Button_LinksTheView")
     private WebElement theViewButton;
 
-    @FindBy(id = "wealth_report")
+    @FindBy(id = "Home_Button_LinksWealthReport")
     private WebElement theWealthReportButton;
+
+    @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"hub Uat\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView")
+    private WebElement horizontalScroll;
+
+    @FindBy(xpath = "(//XCUIElementTypeOther[@name=\"Vertical scroll bar, 2 pages\"])[2]")
+    private WebElement verticalScroll;
 
     public MyHubPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public WebElement getMyHubNavigatorBarTitle() {
-        return waitForVisibility(myHubNavigatorBarTitle, 10);
+    public WebElement getMyHubLabel() {
+        return waitForVisibility(myHubLabel, 10);
     }
 
     public WebElement getAppointmentsLabel() {
@@ -146,20 +155,24 @@ public class MyHubPage extends BasePage {
         return waitForClickability(appointmentsTomorrowButton, 10);
     }
 
-    public WebElement getAppointmentsNoItemsText() {
-        return waitForVisibility(appointmentsNoItemsText, 10);
-    }
-
-    public WebElement getAppointmentMobileTestingText() {
-        return waitForVisibility(appointmentMobileTestingText, 10);
-    }
-
-    public WebElement getAppointmentsMobileBacklogText() {
-        return waitForVisibility(appointmentsMobileBacklogText, 10);
-    }
+//    public WebElement getAppointmentsNoItemsText() {
+//        return waitForVisibility(appointmentsNoItemsText, 10);
+//    }
+//
+//    public WebElement getAppointmentMobileTestingText() {
+//        return waitForVisibility(appointmentMobileTestingText, 10);
+//    }
+//
+//    public WebElement getAppointmentsMobileBacklogText() {
+//        return waitForVisibility(appointmentsMobileBacklogText, 10);
+//    }
 
     public WebElement getFavouritesLabel() {
         return waitForVisibility(favouritesLabel, 10);
+    }
+
+    public WebElement getFavouritesLastCard() {
+        return waitForClickability(favouritesLastCard, 10);
     }
 
     public WebElement getFavouritesScrollView() {
@@ -179,82 +192,90 @@ public class MyHubPage extends BasePage {
     }
 
     public WebElement getSelectionOptions() {
-        return selectionOptions;
+        return waitForClickability(selectionOptions, 10);
     }
 
     public WebElement getCallbacksActivityButton() {
-        return callbacksActivityButton;
+        return waitForClickability(callbacksActivityButton, 10);
     }
 
     public WebElement getCallbacksKeepInTouchButton() {
-        return callbacksKeepInTouchButton;
+        return waitForClickability(callbacksKeepInTouchButton, 10);
     }
 
     public WebElement getCallbacksNotInstructedButton() {
-        return callbacksNotInstructedButton;
+        return waitForClickability(callbacksNotInstructedButton, 10);
     }
 
     public WebElement getCallbacksRequirementButton() {
-        return callbacksRequirementButton;
+        return waitForClickability(callbacksRequirementButton, 10);
     }
 
     public WebElement getCallbacksTodayButton() {
-        return callbacksTodayButton;
+        return waitForClickability(callbacksTodayButton, 10);
     }
 
     public WebElement getCallbacksUpcomingButton() {
-        return callbacksUpcomingButton;
+        return waitForClickability(callbacksUpcomingButton, 10);
     }
 
     public WebElement getCallbacksOverdueButton() {
-        return callbacksOverdueButton;
+        return waitForClickability(callbacksOverdueButton, 10);
     }
 
     public WebElement getCallbacksNoCallbacksText() {
-        return callbacksNoCallbacksText;
+        return waitForVisibility(callbacksNoCallbacksText, 10);
     }
 
-    public WebElement getExploreHubMobileText() {
-        return exploreHubMobileText;
+    public WebElement getExploreHubMobileLabel() {
+        return waitForVisibility(exploreHubMobileLabel, 10);
     }
 
-    public WebElement getHubQuickLinksText() {
-        return hubQuickLinksText;
+    public WebElement getHubQuickLinksLabel() {
+        return waitForVisibility(hubQuickLinksLabel, 10);
     }
 
-    public WebElement getActivitySearchLink() {
-        return activitySearchLink;
+    public WebElement getActivitySearchButton() {
+        return waitForClickability(activitySearchButton, 10);
     }
 
-    public WebElement getRequirementSearchLink() {
-        return requirementSearchLink;
+    public WebElement getRequirementSearchButton() {
+        return waitForClickability(requirementSearchButton, 10);
     }
 
-    public WebElement getPropertySearchLink() {
-        return propertySearchLink;
+    public WebElement getPropertySearchButton() {
+        return waitForClickability(propertySearchButton, 10);
     }
 
-    public WebElement getContactSearchLink() {
-        return contactSearchLink;
+    public WebElement getContactSearchButton() {
+        return waitForClickability(contactSearchButton, 10);
     }
 
-    public WebElement getCreateContactLink() {
-        return createContactLink;
+    public WebElement getCreateContactButton() {
+        return waitForClickability(createContactButton, 10);
     }
 
-    public WebElement getCreateConneXionLink() {
-        return createConneXionLink;
+    public WebElement getCreateConneXionButton() {
+        return waitForClickability(createConneXionButton, 10);
     }
 
-    public WebElement getKnightFrankLinksText() {
-        return knightFrankLinksText;
+    public WebElement getKnightFrankLinksLabel() {
+        return waitForVisibility(knightFrankLinksLabel, 10);
     }
 
     public WebElement getTheViewButton() {
-        return theViewButton;
+        return waitForClickability(theViewButton, 10);
     }
 
     public WebElement getTheWealthReportButton() {
-        return theWealthReportButton;
+        return waitForClickability(theWealthReportButton, 10);
+    }
+
+    public WebElement getHorizontalScroll() {
+        return waitForClickability(horizontalScroll, 10);
+    }
+
+    public WebElement getVerticalScroll() {
+        return waitForClickability(verticalScroll, 10);
     }
 }

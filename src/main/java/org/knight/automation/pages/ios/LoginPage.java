@@ -13,7 +13,7 @@ public class LoginPage extends BasePage {
     private WebElement pinLabel;
 
     @FindBy(id = "Authentication_TextField_Pin")
-    private WebElement pinInputField;
+    private WebElement pinField;
 
     @FindBy(id = "Authentication_Button_Login")
     private WebElement loginButton;
@@ -33,8 +33,8 @@ public class LoginPage extends BasePage {
         return waitForVisibility(pinLabel, 10);
     }
 
-    public WebElement getPinInputField() {
-        return waitForVisibility(pinInputField, 10);
+    public WebElement getPinField() {
+        return waitForVisibility(pinField, 10);
     }
 
     public WebElement getLoginButton() {
@@ -47,21 +47,5 @@ public class LoginPage extends BasePage {
 
     public WebElement getIncorrectPinOkButton() {
         return waitForClickability(incorrectPinOkButton, 10);
-    }
-
-    public void enterPin(String password) {
-        waitForClickability(pinInputField, 10).sendKeys(password);
-    }
-
-    public void clickLoginButton() {
-        waitForClickability(loginButton, 10).click();
-    }
-
-    public String getEnterPinLabelText() {
-        return waitForVisibility(pinLabel, 10).getText();
-    }
-
-    public String getIncorrectPinMessageText() {
-        return waitForVisibility(incorrectPinMessage, 10).getText();
     }
 }

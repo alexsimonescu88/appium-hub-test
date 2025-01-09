@@ -1,27 +1,64 @@
 package org.knight.automation.pages.ios;
 
+import org.knight.automation.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RequirementsSearchPage {
+public class RequirementsSearchPage extends BasePage {
 
-    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"My hub\"]")
-    private WebElement myHubPageButton;
+    @FindBy(id = "My hub")
+    private WebElement myHubButton;
 
-    @FindBy(name = "No Requirements Found")
+    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Search\"]")
+    private WebElement searchLabel;
+
+    @FindBy(xpath = "//XCUIElementTypeTextField")
+    private WebElement searchField;
+
+    @FindBy(id = "My")
+    private WebElement myButton;
+
+    @FindBy(id = "Team")
+    private WebElement teamButton;
+
+    @FindBy(id = "All")
+    private WebElement allButton;
+
+    @FindBy(id = "No Requirements Found")
     private WebElement noRequirementsFoundText;
 
     public RequirementsSearchPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public void navigateBackToMyHubPage() {
-        myHubPageButton.click();
+    public WebElement getMyHubButton() {
+        return waitForClickability(myHubButton, 10);
     }
 
-    public String getNoRequirementsFoundText() {
-        return noRequirementsFoundText.getText();
+    public WebElement getSearchLabel() {
+        return waitForVisibility(searchLabel, 10);
+    }
+
+    public WebElement getSearchField() {
+        return waitForClickability(searchField, 10);
+    }
+
+    public WebElement getMyButton() {
+        return waitForClickability(myButton, 10);
+    }
+
+    public WebElement getTeamButton() {
+        return waitForClickability(teamButton, 10);
+    }
+
+    public WebElement getAllButton() {
+        return waitForClickability(allButton, 10);
+    }
+
+    public WebElement getNoRequirementsFoundText() {
+        return waitForVisibility(noRequirementsFoundText, 10);
     }
 }

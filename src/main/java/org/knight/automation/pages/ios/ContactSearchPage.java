@@ -1,55 +1,71 @@
 package org.knight.automation.pages.ios;
 
+import org.knight.automation.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ContactSearchPage {
+public class ContactSearchPage extends BasePage {
 
-    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"My hub\"]")
-    private WebElement myHubPageButton;
-
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"No contacts available\"]")
-    private WebElement noContactsAvailableText;
-
-    @FindBy(name = "My")
-    private WebElement myContactsButton;
-
-    @FindBy(name = "All")
-    private WebElement allContactsButton;
+    @FindBy(id = "My hub")
+    private WebElement myHubButton;
 
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"My contacts\"]")
-    private WebElement myContactsTitle;
+    private WebElement myContactsLabel;
 
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"All contacts\"]")
-    private WebElement allContactsTitle;
+    private WebElement allContactsLabel;
+
+    @FindBy(id = "Search")
+    private WebElement searchField;
+
+    @FindBy(id = "My")
+    private WebElement myButton;
+
+    @FindBy(id = "All")
+    private WebElement allContactsButton;
+
+    @FindBy(id = "No contacts available")
+    private WebElement noContactsAvailableText;
+
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Clear filters\"]")
+    private WebElement clearFiltersButton;
 
     public ContactSearchPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public void navigateBackToMyHubPage() {
-        myHubPageButton.click();
+    public WebElement getMyHubButton() {
+        return myHubButton;
     }
 
-    public String getNoContactsAvailableText() {
-        return noContactsAvailableText.getText();
+    public WebElement getMyContactsLabel() {
+        return myContactsLabel;
     }
 
-    public void selectMyContacts() {
-        myContactsButton.click();
+    public WebElement getAllContactsLabel() {
+        return allContactsLabel;
     }
 
-    public void selectAllContacts() {
-        allContactsButton.click();
+    public WebElement getSearchField() {
+        return searchField;
     }
 
-    public String getMyContactsTitle() {
-        return myContactsTitle.getText();
+    public WebElement getMyButton() {
+        return myButton;
     }
 
-    public String getAllContactsTitle() {
-        return allContactsTitle.getText();
+    public WebElement getAllContactsButton() {
+        return allContactsButton;
+    }
+
+    public WebElement getNoContactsAvailableText() {
+        return noContactsAvailableText;
+    }
+
+    public WebElement getClearFiltersButton() {
+        return clearFiltersButton;
     }
 }

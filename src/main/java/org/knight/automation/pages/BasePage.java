@@ -1,6 +1,5 @@
 package org.knight.automation.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -20,7 +19,7 @@ public abstract class BasePage {
     /**
      * Waits for a WebElement to be visible.
      *
-     * @param element The WebElement to wait for.
+     * @param element          The WebElement to wait for.
      * @param timeoutInSeconds The timeout duration in seconds.
      * @return The visible WebElement.
      */
@@ -32,7 +31,7 @@ public abstract class BasePage {
     /**
      * Waits for a WebElement to be clickable.
      *
-     * @param element The WebElement to wait for.
+     * @param element          The WebElement to wait for.
      * @param timeoutInSeconds The timeout duration in seconds.
      * @return The clickable WebElement.
      */
