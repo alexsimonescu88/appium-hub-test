@@ -32,9 +32,11 @@ public class MyHubPageTests extends BaseTest {
         appiumDriver.executeScript("mobile: swipe", scrollParams);
         appiumDriver.executeScript("mobile: swipe", scrollParams);
         appiumDriver.executeScript("mobile: swipe", scrollParams);
+        appiumDriver.executeScript("mobile: swipe", scrollParams);
 
         scrollParams.put("direction", "right");
         scrollParams.put("element", myHubPage.getFavouritesScrollView());
+        appiumDriver.executeScript("mobile: swipe", scrollParams);
         appiumDriver.executeScript("mobile: swipe", scrollParams);
         appiumDriver.executeScript("mobile: swipe", scrollParams);
         appiumDriver.executeScript("mobile: swipe", scrollParams);
@@ -46,16 +48,16 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertTrue(myHubPage.getHubQuickLinksLabel().isDisplayed());
         Assert.assertTrue(myHubPage.getActivitySearchButton().isDisplayed());
         Assert.assertTrue(myHubPage.getRequirementSearchButton().isDisplayed());
-        Assert.assertTrue(myHubPage.getPropertySearchButton().isDisplayed());
-        Assert.assertTrue(myHubPage.getContactSearchButton().isDisplayed());
-        Assert.assertTrue(myHubPage.getCreateContactButton().isDisplayed());
-        Assert.assertTrue(myHubPage.getCreateConneXionButton().isDisplayed());
-        Assert.assertTrue(myHubPage.getKnightFrankLinksLabel().isDisplayed());
 
         scrollParams.put("direction", "up");
         scrollParams.put("element", myHubPage.getVerticalScroll());
         appiumDriver.executeScript("mobile: swipe", scrollParams);
 
+        Assert.assertTrue(myHubPage.getPropertySearchButton().isDisplayed());
+        Assert.assertTrue(myHubPage.getContactSearchButton().isDisplayed());
+        Assert.assertTrue(myHubPage.getCreateContactButton().isDisplayed());
+        Assert.assertTrue(myHubPage.getCreateConneXionButton().isDisplayed());
+        Assert.assertTrue(myHubPage.getKnightFrankLinksLabel().isDisplayed());
         Assert.assertTrue(myHubPage.getTheViewButton().isDisplayed());
         Assert.assertTrue(myHubPage.getTheWealthReportButton().isDisplayed());
 
@@ -298,14 +300,14 @@ public class MyHubPageTests extends BaseTest {
     @Test(priority = 8)
     public void testAccessToActivityPage_ShouldSuccessfullyOpenActivityPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
-        ActivitySearchPage activitySearchPage = new ActivitySearchPage(driver);
+        MyHubActivitySearchPage myHubActivitySearchPage = new MyHubActivitySearchPage(driver);
 
         myHubPage.getActivitySearchButton().click();
 
-        String searchLabel = activitySearchPage.getSearchLabel().getText();
+        String searchLabel = myHubActivitySearchPage.getSearchLabel().getText();
         Assert.assertEquals(searchLabel, "Search");
 
-        activitySearchPage.getMyHubButton().click();
+        myHubActivitySearchPage.getMyHubButton().click();
 
         String myHubNavigatorBarTitle = myHubPage.getMyHubLabel().getText();
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
@@ -314,14 +316,14 @@ public class MyHubPageTests extends BaseTest {
     @Test(priority = 9)
     public void testAccessToRequirementsPage_ShouldSuccessfullyOpenRequirementsPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
-        RequirementsSearchPage requirementsSearchPage = new RequirementsSearchPage(driver);
+        MyHubRequirementsSearchPage myHubRequirementsSearchPage = new MyHubRequirementsSearchPage(driver);
 
         myHubPage.getRequirementSearchButton().click();
 
-        String mySearchRequirementsText = requirementsSearchPage.getNoRequirementsFoundText().getText();
+        String mySearchRequirementsText = myHubRequirementsSearchPage.getNoRequirementsFoundText().getText();
         Assert.assertEquals(mySearchRequirementsText, "No Requirements Found");
 
-        requirementsSearchPage.getMyHubButton().click();
+        myHubRequirementsSearchPage.getMyHubButton().click();
 
         String myHubNavigatorBarTitle = myHubPage.getMyHubLabel().getText();
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
@@ -330,14 +332,20 @@ public class MyHubPageTests extends BaseTest {
     @Test(priority = 10)
     public void testAccessToPropertyPage_ShouldSuccessfullyOpenPropertyPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
-        PropertySearchPage propertySearchPage = new PropertySearchPage(driver);
+        MyHubPropertySearchPage myHubPropertySearchPage = new MyHubPropertySearchPage(driver);
+        AppiumDriver appiumDriver = (AppiumDriver) this.driver;
+        Map<String, Object> scrollParams = new HashMap<>();
+
+        scrollParams.put("direction", "up");
+        scrollParams.put("element", myHubPage.getVerticalScroll());
+        appiumDriver.executeScript("mobile: swipe", scrollParams);
 
         myHubPage.getPropertySearchButton().click();
 
-        String mySearchPropertiesMessage = propertySearchPage.getPropertiesSearchMessage().getText();
+        String mySearchPropertiesMessage = myHubPropertySearchPage.getPropertiesSearchMessage().getText();
         Assert.assertEquals(mySearchPropertiesMessage, "Enter text to search properties.");
 
-        propertySearchPage.getMyHubButton().click();
+        myHubPropertySearchPage.getMyHubButton().click();
 
         String myHubNavigatorBarTitle = myHubPage.getMyHubLabel().getText();
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
@@ -346,14 +354,29 @@ public class MyHubPageTests extends BaseTest {
     @Test(priority = 11)
     public void testAccessToContactSearchPage_ShouldSuccessfullyOpenContactSearchPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
-        ContactSearchPage contactSearchPage = new ContactSearchPage(driver);
+        MyHubContactSearchPage myHubContactSearchPage = new MyHubContactSearchPage(driver);
+        AppiumDriver appiumDriver = (AppiumDriver) this.driver;
+        Map<String, Object> scrollParams = new HashMap<>();
+
+        scrollParams.put("direction", "up");
+        scrollParams.put("element", myHubPage.getVerticalScroll());
+        appiumDriver.executeScript("mobile: swipe", scrollParams);
 
         myHubPage.getContactSearchButton().click();
 
-        String myContactsTitle = contactSearchPage.getMyContactsLabel().getText();
-        Assert.assertEquals(myContactsTitle, "My contacts");
+        String searchTitle = myHubContactSearchPage.getSearchLabel().getText();
+        Assert.assertEquals(searchTitle, "Search");
 
-        contactSearchPage.getMyHubButton().click();
+        myHubContactSearchPage.getTeamButton().click();
+        Assert.assertEquals(searchTitle, "Search");
+
+        myHubContactSearchPage.getAllButton().click();
+        Assert.assertEquals(searchTitle, "Search");
+
+        myHubContactSearchPage.getMyButton().click();
+        Assert.assertEquals(searchTitle, "Search");
+
+        myHubContactSearchPage.getMyHubButton().click();
 
         String myHubNavigatorBarTitle = myHubPage.getMyHubLabel().getText();
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
@@ -362,17 +385,23 @@ public class MyHubPageTests extends BaseTest {
     @Test(priority = 12)
     public void testAccessToCreateContactPage_ShouldSuccessfullyOpenCreateContactPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
-        CreateContactPage createContactPage = new CreateContactPage(driver);
+        MyHubCreateContactPage myHubCreateContactPage = new MyHubCreateContactPage(driver);
+        AppiumDriver appiumDriver = (AppiumDriver) this.driver;
+        Map<String, Object> scrollParams = new HashMap<>();
+
+        scrollParams.put("direction", "up");
+        scrollParams.put("element", myHubPage.getVerticalScroll());
+        appiumDriver.executeScript("mobile: swipe", scrollParams);
 
         myHubPage.getCreateContactButton().click();
 
-        String searchTitle = createContactPage.getSearchLabel().getText();
+        String searchTitle = myHubCreateContactPage.getSearchLabel().getText();
         Assert.assertEquals(searchTitle, "Search");
 
-        String duplicateCheckText = createContactPage.getDuplicateCheckLabel().getText();
+        String duplicateCheckText = myHubCreateContactPage.getDuplicateCheckLabel().getText();
         Assert.assertEquals(duplicateCheckText, "Duplicate check");
 
-        createContactPage.getMyHubButton().click();
+        myHubCreateContactPage.getMyHubButton().click();
 
         String myHubNavigatorBarTitle = myHubPage.getMyHubLabel().getText();
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
@@ -381,7 +410,13 @@ public class MyHubPageTests extends BaseTest {
     @Test(priority = 13)
     public void testAccessToCreateConneXionPage_ShouldSuccessfullyOpenCreateConneXionPageWithAllContactsSelected() {
         MyHubPage myHubPage = new MyHubPage(driver);
-        CreateConneXionPage createConneXion = new CreateConneXionPage(driver);
+        MyHubCreateConneXionPage createConneXion = new MyHubCreateConneXionPage(driver);
+        AppiumDriver appiumDriver = (AppiumDriver) this.driver;
+        Map<String, Object> scrollParams = new HashMap<>();
+
+        scrollParams.put("direction", "up");
+        scrollParams.put("element", myHubPage.getVerticalScroll());
+        appiumDriver.executeScript("mobile: swipe", scrollParams);
 
         myHubPage.getCreateConneXionButton().click();
 
@@ -399,7 +434,7 @@ public class MyHubPageTests extends BaseTest {
     @Ignore
     public void testAccessToTheViewLink_ShouldSuccessfullyOpenTheViewLink() {
         MyHubPage myHubPage = new MyHubPage(driver);
-        TheViewPage theViewPage = new TheViewPage(driver);
+        MyHubTheViewPage myHubTheViewPage = new MyHubTheViewPage(driver);
         AppiumDriver appiumDriver = (AppiumDriver) this.driver;
         Map<String, Object> scrollParams = new HashMap<>();
 
@@ -411,12 +446,12 @@ public class MyHubPageTests extends BaseTest {
 //        Assert.assertTrue(theViewPage.getArticleTitle().isDisplayed());
 
         // Get the element's top-left corner coordinates
-        int elementX = theViewPage.getHubUatButton().getLocation().getX();
-        int elementY = theViewPage.getHubUatButton().getLocation().getY();
+        int elementX = myHubTheViewPage.getHubUatButton().getLocation().getX();
+        int elementY = myHubTheViewPage.getHubUatButton().getLocation().getY();
 
         // Get the element's width and height
-        int elementWidth = theViewPage.getHubUatButton().getSize().getWidth();
-        int elementHeight = theViewPage.getHubUatButton().getSize().getHeight();
+        int elementWidth = myHubTheViewPage.getHubUatButton().getSize().getWidth();
+        int elementHeight = myHubTheViewPage.getHubUatButton().getSize().getHeight();
 
         // Calculate the target coordinates within the element
         // Example: Click 10% width and 50% height
@@ -445,7 +480,7 @@ public class MyHubPageTests extends BaseTest {
     @Ignore
     public void testAccessToTheWealthReportLink_ShouldSuccessfullyOpenTheWealthReportLink() {
         MyHubPage myHubPage = new MyHubPage(driver);
-        TheWealthReportPage theWealthReportPage = new TheWealthReportPage(driver);
+        MyHubTheWealthReportPage myHubTheWealthReportPage = new MyHubTheWealthReportPage(driver);
         AppiumDriver appiumDriver = (AppiumDriver) this.driver;
         Map<String, Object> scrollParams = new HashMap<>();
 
@@ -456,12 +491,12 @@ public class MyHubPageTests extends BaseTest {
         myHubPage.getTheWealthReportButton().click();
 
         // Get the element's top-left corner coordinates
-        int elementX = theWealthReportPage.getHubUatButton().getLocation().getX();
-        int elementY = theWealthReportPage.getHubUatButton().getLocation().getY();
+        int elementX = myHubTheWealthReportPage.getHubUatButton().getLocation().getX();
+        int elementY = myHubTheWealthReportPage.getHubUatButton().getLocation().getY();
 
         // Get the element's width and height
-        int elementWidth = theWealthReportPage.getHubUatButton().getSize().getWidth();
-        int elementHeight = theWealthReportPage.getHubUatButton().getSize().getHeight();
+        int elementWidth = myHubTheWealthReportPage.getHubUatButton().getSize().getWidth();
+        int elementHeight = myHubTheWealthReportPage.getHubUatButton().getSize().getHeight();
 
         // Calculate the target coordinates within the element
         // Example: Click 75% width and 50% height

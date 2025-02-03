@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RequirementsSearchPage extends BasePage {
+public class MyHubRequirementsSearchPage extends BasePage {
 
     @FindBy(id = "My hub")
     private WebElement myHubButton;
@@ -29,7 +29,7 @@ public class RequirementsSearchPage extends BasePage {
     @FindBy(id = "No Requirements Found")
     private WebElement noRequirementsFoundText;
 
-    public RequirementsSearchPage(WebDriver driver) {
+    public MyHubRequirementsSearchPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

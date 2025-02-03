@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ActivitySearchPage extends BasePage {
+public class MyHubActivitySearchPage extends BasePage {
 
     @FindBy(id = "My hub")
     private WebElement myHubButton;
@@ -35,7 +35,7 @@ public class ActivitySearchPage extends BasePage {
     @FindBy(xpath = "(//XCUIElementTypeOther[@name=\"Vertical scroll bar, 7 pages\"])[2]")
     private WebElement verticalScrollView;
 
-    public ActivitySearchPage(WebDriver driver) {
+    public MyHubActivitySearchPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

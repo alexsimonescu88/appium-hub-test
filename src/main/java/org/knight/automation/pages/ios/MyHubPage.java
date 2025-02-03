@@ -44,7 +44,7 @@ public class MyHubPage extends BasePage {
     @FindBy(id = "Redlap House, Redlap, Dartmouth, TQ6 0JR")
     private WebElement favouritesLastCard;
 
-    @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"hub Uat\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView")
+    @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"hub Uat\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[2]")
     private WebElement favouritesScrollView;
 
     @FindBy(id = "My Callbacks")
@@ -110,10 +110,10 @@ public class MyHubPage extends BasePage {
     @FindBy(id = "Knight Frank Links")
     private WebElement knightFrankLinksLabel;
 
-    @FindBy(id = "Home_Button_LinksTheView")
+    @FindBy(id = "the_view")
     private WebElement theViewButton;
 
-    @FindBy(id = "Home_Button_LinksWealthReport")
+    @FindBy(id = "wealth_report")
     private WebElement theWealthReportButton;
 
     @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"hub Uat\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView")
@@ -121,6 +121,9 @@ public class MyHubPage extends BasePage {
 
     @FindBy(xpath = "(//XCUIElementTypeOther[@name=\"Vertical scroll bar, 2 pages\"])[2]")
     private WebElement verticalScroll;
+
+    @FindBy(id = "hub")
+    private WebElement hubButton;
 
     public MyHubPage(WebDriver driver) {
         super(driver);
@@ -277,5 +280,9 @@ public class MyHubPage extends BasePage {
 
     public WebElement getVerticalScroll() {
         return waitForClickability(verticalScroll, 10);
+    }
+
+    public WebElement getHubButton() {
+        return waitForClickability(hubButton, 10);
     }
 }

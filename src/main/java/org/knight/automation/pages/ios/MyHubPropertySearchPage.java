@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PropertySearchPage extends BasePage {
+public class MyHubPropertySearchPage extends BasePage {
     @FindBy(id = "My hub")
     private WebElement myHubButton;
 
@@ -19,7 +19,7 @@ public class PropertySearchPage extends BasePage {
     @FindBy(id = "Enter text to search properties.")
     private WebElement propertiesSearchMessage;
 
-    public PropertySearchPage(WebDriver driver) {
+    public MyHubPropertySearchPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

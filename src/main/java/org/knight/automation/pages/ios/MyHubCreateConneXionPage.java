@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CreateConneXionPage extends BasePage {
+public class MyHubCreateConneXionPage extends BasePage {
 
     @FindBy(id = "My hub")
     private WebElement myHubButton;
@@ -32,7 +32,7 @@ public class CreateConneXionPage extends BasePage {
     @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Clear filters\"]")
     private WebElement clearFiltersButton;
 
-    public CreateConneXionPage(WebDriver driver) {
+    public MyHubCreateConneXionPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

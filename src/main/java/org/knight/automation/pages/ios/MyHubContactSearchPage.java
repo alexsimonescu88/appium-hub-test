@@ -1,0 +1,71 @@
+package org.knight.automation.pages.ios;
+
+import org.knight.automation.pages.BasePage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class MyHubContactSearchPage extends BasePage {
+
+    @FindBy(id = "My hub")
+    private WebElement myHubButton;
+
+    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Search\"]")
+    private WebElement searchLabel;
+
+    @FindBy(id = "Search")
+    private WebElement searchField;
+
+    @FindBy(id = "My")
+    private WebElement myButton;
+
+    @FindBy(id = "Team")
+    private WebElement teamButton;
+
+    @FindBy(id = "All")
+    private WebElement allButton;
+
+    @FindBy(id = "No contacts available")
+    private WebElement noContactsAvailableText;
+
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Clear filters\"]")
+    private WebElement clearSearchButton;
+
+    public MyHubContactSearchPage(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
+
+    public WebElement getMyHubButton() {
+        return waitForClickability(myHubButton, 10);
+    }
+
+    public WebElement getSearchLabel() {
+        return waitForVisibility(searchLabel, 10);
+    }
+
+    public WebElement getSearchField() {
+        return waitForClickability(searchField, 10);
+    }
+
+    public WebElement getMyButton() {
+        return waitForClickability(myButton, 10);
+    }
+
+    public WebElement getTeamButton() {
+        return waitForClickability(teamButton, 10);
+    }
+
+    public WebElement getAllButton() {
+        return waitForClickability(allButton, 10);
+    }
+
+    public WebElement getNoContactsAvailableText() {
+        return waitForVisibility(noContactsAvailableText, 10);
+    }
+
+    public WebElement getClearSearchButton() {
+        return waitForClickability(clearSearchButton, 10);
+    }
+}

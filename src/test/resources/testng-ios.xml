@@ -5,7 +5,17 @@
         <classes>
             <class name="org.knight.automation.tests.ios.LoginPageTests"/>
             <class name="org.knight.automation.tests.ios.MyHubPageTests"/>
-            <class name="org.knight.automation.tests.ios.ActivitySearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.MyHubActivitySearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubContactsPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubContactsViewAllPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubContactsSearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubCompaniesPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubCompaniesSearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubCalendarPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubNotificationsPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubCallbacksPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubCallbacksViewAllPageTests"/>
         </classes>
     </test>
 </suite>

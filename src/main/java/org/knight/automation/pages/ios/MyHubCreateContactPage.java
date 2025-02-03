@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CreateContactPage extends BasePage {
+public class MyHubCreateContactPage extends BasePage {
 
     @FindBy(id = "My hub")
     private WebElement myHubButton;
@@ -35,7 +35,7 @@ public class CreateContactPage extends BasePage {
     @FindBy(xpath = "//XCUIElementTypeTextField[@value=\"Location\"]")
     private WebElement locationField;
 
-    public CreateContactPage(WebDriver driver) {
+    public MyHubCreateContactPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
