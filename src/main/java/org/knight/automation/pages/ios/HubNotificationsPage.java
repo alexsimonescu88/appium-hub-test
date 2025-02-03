@@ -23,14 +23,14 @@ public class HubNotificationsPage extends BasePage {
     }
 
     public WebElement getHubButton() {
-        return waitForClickability(hubButton, 10);
+        return waitForClickability(hubButton, 20);
     }
 
     public WebElement getNotificationsLabel() {
-        return waitForVisibility(notificationsLabel, 10);
+        return waitForVisibility(notificationsLabel, 20);
     }
 
     public WebElement getNotificationsFilterButton() {
-        return waitForClickability(notificationsFilterButton, 10);
+        return waitForClickability(notificationsFilterButton, 20);
     }
 }

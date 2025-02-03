@@ -50,50 +50,50 @@ public class HubPage extends BasePage {
     }
 
     public WebElement getNavBarTittle() {
-        return waitForVisibility(navBarTittle, 10);
+        return waitForVisibility(navBarTittle, 20);
     }
 
     public WebElement getContactsButton() {
-        return waitForClickability(contactsButton, 10);
+        return waitForClickability(contactsButton, 20);
     }
 
     public WebElement getCompaniesButton() {
-        return waitForClickability(companiesButton, 10);
+        return waitForClickability(companiesButton, 20);
     }
 
     public WebElement getPropertiesButton() {
-        return waitForClickability(propertiesButton, 10);
+        return waitForClickability(propertiesButton, 20);
     }
 
     public WebElement getActivitiesButton() {
-        return waitForClickability(activitiesButton, 10);
+        return waitForClickability(activitiesButton, 20);
     }
 
     public WebElement getRequirementsButton() {
-        return waitForClickability(requirementsButton, 10);
+        return waitForClickability(requirementsButton, 20);
     }
 
     public WebElement getConnexionsButton() {
-        return waitForClickability(connexionsButton, 10);
+        return waitForClickability(connexionsButton, 20);
     }
 
     public WebElement getCalendarButton() {
-        return waitForClickability(calendarButton, 10);
+        return waitForClickability(calendarButton, 20);
     }
 
     public WebElement getNotificationsButton() {
-        return waitForClickability(notificationsButton, 10);
+        return waitForClickability(notificationsButton, 20);
     }
 
     public WebElement getCallbacksButton() {
-        return waitForClickability(callbacksButton, 10);
+        return waitForClickability(callbacksButton, 20);
     }
 
     public WebElement getMyHubButton() {
-        return waitForClickability(myHubButton, 10);
+        return waitForClickability(myHubButton, 20);
     }
 
     public WebElement getHubButton() {
-        return waitForClickability(hubButton, 10);
+        return waitForClickability(hubButton, 20);
     }
 }

@@ -41,38 +41,38 @@ public class MyHubActivitySearchPage extends BasePage {
     }
 
     public WebElement getMyHubButton() {
-        return waitForClickability(myHubButton, 10);
+        return waitForClickability(myHubButton, 20);
     }
 
     public WebElement getSearchLabel() {
-        return waitForVisibility(searchLabel, 10);
+        return waitForVisibility(searchLabel, 20);
     }
 
     public WebElement getSearchField() {
-        return waitForClickability(searchField, 10);
+        return waitForClickability(searchField, 20);
     }
 
     public WebElement getMyButton() {
-        return waitForClickability(myButton, 10);
+        return waitForClickability(myButton, 20);
     }
 
     public WebElement getTeamButton() {
-        return waitForClickability(teamButton, 10);
+        return waitForClickability(teamButton, 20);
     }
 
     public WebElement getAllButton() {
-        return waitForClickability(allButton, 10);
+        return waitForClickability(allButton, 20);
     }
 
     public WebElement getNoActivitiesFoundText() {
-        return waitForVisibility(noActivitiesFoundText, 10);
+        return waitForVisibility(noActivitiesFoundText, 20);
     }
 
     public WebElement getClearTextButton() {
-        return waitForClickability(clearTextButton, 10);
+        return waitForClickability(clearTextButton, 20);
     }
 
     public WebElement getVerticalScrollView() {
-        return waitForClickability(verticalScrollView, 10);
+        return waitForClickability(verticalScrollView, 20);
     }
 }

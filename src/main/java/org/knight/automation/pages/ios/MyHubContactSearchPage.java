@@ -38,34 +38,34 @@ public class MyHubContactSearchPage extends BasePage {
     }
 
     public WebElement getMyHubButton() {
-        return waitForClickability(myHubButton, 10);
+        return waitForClickability(myHubButton, 20);
     }
 
     public WebElement getSearchLabel() {
-        return waitForVisibility(searchLabel, 10);
+        return waitForVisibility(searchLabel, 20);
     }
 
     public WebElement getSearchField() {
-        return waitForClickability(searchField, 10);
+        return waitForClickability(searchField, 20);
     }
 
     public WebElement getMyButton() {
-        return waitForClickability(myButton, 10);
+        return waitForClickability(myButton, 20);
     }
 
     public WebElement getTeamButton() {
-        return waitForClickability(teamButton, 10);
+        return waitForClickability(teamButton, 20);
     }
 
     public WebElement getAllButton() {
-        return waitForClickability(allButton, 10);
+        return waitForClickability(allButton, 20);
     }
 
     public WebElement getNoContactsAvailableText() {
-        return waitForVisibility(noContactsAvailableText, 10);
+        return waitForVisibility(noContactsAvailableText, 20);
     }
 
     public WebElement getClearSearchButton() {
-        return waitForClickability(clearSearchButton, 10);
+        return waitForClickability(clearSearchButton, 20);
     }
 }

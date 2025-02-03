@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="iOSAutomationSuite">
+<suite name="iOSAutomationSuite" parallel="false">
     <parameter name="platform" value="iOS"/>
-    <test name="iOSTests">
+    <test name="iOSTests" preserve-order="true">
         <classes>
             <class name="org.knight.automation.tests.ios.LoginPageTests"/>
             <class name="org.knight.automation.tests.ios.MyHubPageTests"/>
@@ -12,6 +12,13 @@
             <class name="org.knight.automation.tests.ios.HubContactsSearchPageTests"/>
             <class name="org.knight.automation.tests.ios.HubCompaniesPageTests"/>
             <class name="org.knight.automation.tests.ios.HubCompaniesSearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubPropertiesPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubActivitiesPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubActivitiesSearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubRequirementsPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubRequirementsSearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubConneXionsPageTests"/>
+            <class name="org.knight.automation.tests.ios.HubConneXionsSearchPageTests"/>
             <class name="org.knight.automation.tests.ios.HubCalendarPageTests"/>
             <class name="org.knight.automation.tests.ios.HubNotificationsPageTests"/>
             <class name="org.knight.automation.tests.ios.HubCallbacksPageTests"/>

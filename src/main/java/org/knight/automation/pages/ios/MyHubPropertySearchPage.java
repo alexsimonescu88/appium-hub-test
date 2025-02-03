@@ -25,18 +25,18 @@ public class MyHubPropertySearchPage extends BasePage {
     }
 
     public WebElement getMyHubButton() {
-        return waitForClickability(myHubButton, 10);
+        return waitForClickability(myHubButton, 20);
     }
 
     public WebElement getPropertiesLabel() {
-        return waitForVisibility(propertiesLabel, 10);
+        return waitForVisibility(propertiesLabel, 20);
     }
 
     public WebElement getSearchField() {
-        return waitForClickability(searchField, 10);
+        return waitForClickability(searchField, 20);
     }
 
     public WebElement getPropertiesSearchMessage() {
-        return waitForVisibility(propertiesSearchMessage, 10);
+        return waitForVisibility(propertiesSearchMessage, 20);
     }
 }

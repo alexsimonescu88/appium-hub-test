@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class HubCompaniesPageTests extends BaseTest {
 
-    @Test(priority = 1)
+    @Test
     public void testAccessToHubCompaniesPage_shouldSuccessfullyOpenHubCompaniesPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         HubPage hubPage = new HubPage(driver);

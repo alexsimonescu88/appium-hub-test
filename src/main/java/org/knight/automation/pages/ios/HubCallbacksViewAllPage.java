@@ -26,18 +26,18 @@ public class HubCallbacksViewAllPage extends BasePage {
     }
 
     public WebElement getCallbacksButton() {
-        return waitForClickability(callbacksButton, 10);
+        return waitForClickability(callbacksButton, 20);
     }
 
     public WebElement getViewAllLabel() {
-        return waitForVisibility(viewAllLabel, 10);
+        return waitForVisibility(viewAllLabel, 20);
     }
 
     public WebElement getRequirementCallbacksLabel() {
-        return waitForVisibility(requirementCallbacksLabel, 10);
+        return waitForVisibility(requirementCallbacksLabel, 20);
     }
 
     public WebElement getNoInfoAvailableLabel() {
-        return waitForVisibility(noInfoAvailableLabel, 10);
+        return waitForVisibility(noInfoAvailableLabel, 20);
     }
 }

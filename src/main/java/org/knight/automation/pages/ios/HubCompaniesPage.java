@@ -23,14 +23,14 @@ public class HubCompaniesPage extends BasePage {
     }
 
     public WebElement getHubButton() {
-        return waitForClickability(hubButton, 10);
+        return waitForClickability(hubButton, 20);
     }
 
     public WebElement getCompaniesLabel() {
-        return waitForVisibility(companiesLabel, 10);
+        return waitForVisibility(companiesLabel, 20);
     }
 
     public WebElement getCompaniesSearchButton() {
-        return waitForClickability(companiesSearchButton, 10);
+        return waitForClickability(companiesSearchButton, 20);
     }
 }

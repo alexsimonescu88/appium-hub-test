@@ -35,30 +35,30 @@ public class HubContactsPage extends BasePage {
     }
 
     public WebElement getHubButton() {
-        return waitForClickability(hubButton, 10);
+        return waitForClickability(hubButton, 20);
     }
 
     public WebElement getContactsLabel() {
-        return waitForVisibility(contactsLabel, 10);
+        return waitForVisibility(contactsLabel, 20);
     }
 
     public WebElement getContactsSearchButton() {
-        return waitForClickability(contactsSearchButton, 10);
+        return waitForClickability(contactsSearchButton, 20);
     }
 
     public WebElement getActiveContacts() {
-        return waitForVisibility(activeContacts, 10);
+        return waitForVisibility(activeContacts, 20);
     }
 
     public WebElement getContactsChevronDown() {
-        return waitForClickability(contactsChevronDown, 10);
+        return waitForClickability(contactsChevronDown, 20);
     }
 
     public WebElement getContactsChevronUp() {
-        return waitForClickability(contactsChevronUp, 10);
+        return waitForClickability(contactsChevronUp, 20);
     }
 
     public WebElement getViewAllButton() {
-        return waitForClickability(viewAllButton, 10);
+        return waitForClickability(viewAllButton, 20);
     }
 }

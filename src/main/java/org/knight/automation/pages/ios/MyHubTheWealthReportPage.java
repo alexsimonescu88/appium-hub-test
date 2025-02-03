@@ -17,6 +17,6 @@ public class MyHubTheWealthReportPage extends BasePage {
     }
 
     public WebElement getHubUatButton() {
-        return waitForVisibility(hubUatButton, 10);
+        return waitForVisibility(hubUatButton, 20);
     }
 }

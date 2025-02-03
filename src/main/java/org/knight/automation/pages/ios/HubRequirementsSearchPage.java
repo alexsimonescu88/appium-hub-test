@@ -6,19 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HubContactsSearchPage extends BasePage {
+public class HubRequirementsSearchPage extends BasePage {
 
-    @FindBy(id = "Contacts")
-    private WebElement contactsButton;
+    @FindBy(id = "Requirements")
+    private WebElement requirementsButton;
 
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Search\"]")
     private WebElement searchLabel;
 
-    @FindBy(xpath = "//XCUIElementTypeTextField[@value=\"Search for name, address, email, number\"]")
+    @FindBy(xpath = "//XCUIElementTypeOther[@name=\"filter_icon\"]")
+    private WebElement filterButton;
+
+    @FindBy(xpath = "//XCUIElementTypeTextField")
     private WebElement searchField;
 
     @FindBy(id = "multiply.circle.fill")
-    private WebElement clearSearchButton;
+    private WebElement clearSearch;
 
     @FindBy(id = "My")
     private WebElement myButton;
@@ -32,25 +35,29 @@ public class HubContactsSearchPage extends BasePage {
     @FindBy(xpath = "//XCUIElementTypeScrollView")
     private WebElement verticalScrollView;
 
-    public HubContactsSearchPage(WebDriver driver) {
+    public HubRequirementsSearchPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public WebElement getContactsButton() {
-        return waitForClickability(contactsButton, 20);
+    public WebElement getRequirementsButton() {
+        return waitForClickability(requirementsButton, 20);
     }
 
     public WebElement getSearchLabel() {
         return waitForVisibility(searchLabel, 20);
     }
 
+    public WebElement getFilterButton() {
+        return waitForClickability(filterButton, 20);
+    }
+
     public WebElement getSearchField() {
         return waitForClickability(searchField, 20);
     }
 
-    public WebElement getClearSearchButton() {
-        return waitForClickability(clearSearchButton, 20);
+    public WebElement getClearSearch() {
+        return waitForClickability(clearSearch, 20);
     }
 
     public WebElement getMyButton() {

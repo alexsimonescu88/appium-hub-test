@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class HubCallbacksViewAllPageTests extends BaseTest {
 
-    @Test(priority = 1)
+    @Test
     public void testAccessToHubCallbacksViewAllPage_shouldSuccessfullyAccessHubCallbacksViewAllPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         HubPage hubPage = new HubPage(driver);

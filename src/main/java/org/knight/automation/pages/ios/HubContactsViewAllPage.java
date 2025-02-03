@@ -20,10 +20,10 @@ public class HubContactsViewAllPage extends BasePage {
     }
 
     public WebElement getContactsButton() {
-        return waitForClickability(contactsButton, 10);
+        return waitForClickability(contactsButton, 20);
     }
 
     public WebElement getContactsLabel() {
-        return waitForVisibility(contactsLabel, 10);
+        return waitForVisibility(contactsLabel, 20);
     }
 }

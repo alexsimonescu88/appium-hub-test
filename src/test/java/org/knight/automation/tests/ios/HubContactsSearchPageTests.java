@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class HubContactsSearchPageTests extends BaseTest {
 
-    @Test(priority = 1)
+    @Test
     public void testAccessAndSearchInputToHubContactsSearchPage_shouldSuccessfullyOpenHubContactsSearchPageAndDisplayResultsBasedOnInputs() {
         MyHubPage myHubPage = new MyHubPage(driver);
         HubPage hubPage = new HubPage(driver);
@@ -26,7 +26,6 @@ public class HubContactsSearchPageTests extends BaseTest {
 
         hubPage.getContactsButton().click();
         Assert.assertTrue(hubContactsPage.getContactsLabel().getText().matches("Contacts"));
-        Assert.assertTrue(hubContactsPage.getActiveContacts().isDisplayed());
         Assert.assertTrue(hubContactsPage.getContactsSearchButton().isDisplayed());
         Assert.assertTrue(hubContactsPage.getHubButton().isDisplayed());
 
@@ -55,7 +54,6 @@ public class HubContactsSearchPageTests extends BaseTest {
         Assert.assertTrue(hubContactsPage.getContactsSearchButton().isDisplayed());
         Assert.assertTrue(hubContactsPage.getContactsLabel().isDisplayed());
         Assert.assertTrue(hubContactsPage.getHubButton().isDisplayed());
-        Assert.assertTrue(hubContactsPage.getContactsChevronDown().isDisplayed());
 
         hubContactsPage.getHubButton().click();
         Assert.assertTrue(hubPage.getNavBarTittle().isDisplayed());

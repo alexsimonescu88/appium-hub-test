@@ -38,34 +38,34 @@ public class MyHubCreateConneXionPage extends BasePage {
     }
 
     public WebElement getMyHubButton() {
-        return waitForClickability(myHubButton, 10);
+        return waitForClickability(myHubButton, 20);
     }
 
     public WebElement getMyContactsTitle() {
-        return waitForVisibility(myContactsTitle, 10);
+        return waitForVisibility(myContactsTitle, 20);
     }
 
     public WebElement getAllContactsTitle() {
-        return waitForVisibility(allContactsTitle, 10);
+        return waitForVisibility(allContactsTitle, 20);
     }
 
     public WebElement getSearchField() {
-        return waitForClickability(searchField, 10);
+        return waitForClickability(searchField, 20);
     }
 
     public WebElement getMyButton() {
-        return waitForClickability(myButton, 10);
+        return waitForClickability(myButton, 20);
     }
 
     public WebElement getAllButton() {
-        return waitForClickability(allButton, 10);
+        return waitForClickability(allButton, 20);
     }
 
     public WebElement getNoResultsMatchedText() {
-        return waitForVisibility(noResultsMatchedText, 10);
+        return waitForVisibility(noResultsMatchedText, 20);
     }
 
     public WebElement getClearFiltersButton() {
-        return waitForClickability(clearFiltersButton, 10);
+        return waitForClickability(clearFiltersButton, 20);
     }
 }

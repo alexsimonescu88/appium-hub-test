@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class MyHubPageTests extends BaseTest {
 
-    @Test()
+    @Test(priority = 1)
     public void testPresenceOfAllElementsOnMyHubPage_ShouldSuccessfullyIdentifyThePresenceOfAllElementsOnMyHubPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         AppiumDriver appiumDriver = (AppiumDriver) this.driver;
@@ -29,17 +29,9 @@ public class MyHubPageTests extends BaseTest {
         scrollParams.put("direction", "left");
         scrollParams.put("element", myHubPage.getFavouritesScrollView());
         appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
 
         scrollParams.put("direction", "right");
         scrollParams.put("element", myHubPage.getFavouritesScrollView());
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
         appiumDriver.executeScript("mobile: swipe", scrollParams);
 
         Assert.assertTrue(myHubPage.getMyCallbacksLabel().isDisplayed());
@@ -66,7 +58,7 @@ public class MyHubPageTests extends BaseTest {
         appiumDriver.executeScript("mobile: swipe", scrollParams);
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void testAccessToAppointmentsYesterday_shouldSuccessfullyExpandAppointmentsYesterday() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
@@ -90,7 +82,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertTrue(myHubPage.getAppointmentsChevronDown().isEnabled());
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void testAccessToAppointmentsToday_shouldSuccessfullyExpandAppointmentsToday() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
@@ -105,7 +97,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertTrue(myHubPage.getAppointmentsChevronDown().isEnabled());
     }
 
-    @Test(priority = 3)
+    @Test(priority = 4)
     public void testAccessToAppointmentsTomorrow_shouldSuccessfullyExpandAppointmentsTomorrow() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
@@ -125,7 +117,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertTrue(myHubPage.getAppointmentsChevronDown().isEnabled());
     }
 
-    @Test(priority = 4)
+    @Test(priority = 5)
     public void testAccessToMyCallbacksActivitySelection_shouldSuccessfullyExpandMyCallbacksActivitySelection() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
@@ -155,7 +147,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertTrue(myHubPage.getMyCallbacksChevronDown().isEnabled());
     }
 
-    @Test(priority = 5)
+    @Test(priority = 6)
     public void testAccessToMyCallbacksKeepInTouchSelection_ShouldSuccessfullyExpandMyCallbacksKeepInTouchSelection() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
@@ -202,7 +194,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertTrue(myHubPage.getMyCallbacksChevronDown().isEnabled());
     }
 
-    @Test(priority = 6)
+    @Test(priority = 7)
     public void testAccessToMyCallbacksNotInstructedSelection_ShouldSuccessfullyExpandMyCallbacksNotInstructedSelection() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
@@ -249,7 +241,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertTrue(myHubPage.getMyCallbacksChevronDown().isEnabled());
     }
 
-    @Test(priority = 7)
+    @Test(priority = 8)
     public void testAccessToMyCallbacksRequirementSelection_ShouldSuccessfullyExpandMyCallbacksRequirementSelection() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
@@ -297,7 +289,7 @@ public class MyHubPageTests extends BaseTest {
     }
 
 
-    @Test(priority = 8)
+    @Test(priority = 9)
     public void testAccessToActivityPage_ShouldSuccessfullyOpenActivityPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubActivitySearchPage myHubActivitySearchPage = new MyHubActivitySearchPage(driver);
@@ -313,7 +305,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 9)
+    @Test(priority = 10)
     public void testAccessToRequirementsPage_ShouldSuccessfullyOpenRequirementsPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubRequirementsSearchPage myHubRequirementsSearchPage = new MyHubRequirementsSearchPage(driver);
@@ -329,7 +321,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 10)
+    @Test(priority = 11)
     public void testAccessToPropertyPage_ShouldSuccessfullyOpenPropertyPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubPropertySearchPage myHubPropertySearchPage = new MyHubPropertySearchPage(driver);
@@ -351,7 +343,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 11)
+    @Test(priority = 12)
     public void testAccessToContactSearchPage_ShouldSuccessfullyOpenContactSearchPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubContactSearchPage myHubContactSearchPage = new MyHubContactSearchPage(driver);
@@ -382,7 +374,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 12)
+    @Test(priority = 13)
     public void testAccessToCreateContactPage_ShouldSuccessfullyOpenCreateContactPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubCreateContactPage myHubCreateContactPage = new MyHubCreateContactPage(driver);
@@ -407,7 +399,7 @@ public class MyHubPageTests extends BaseTest {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 13)
+    @Test(priority = 14)
     public void testAccessToCreateConneXionPage_ShouldSuccessfullyOpenCreateConneXionPageWithAllContactsSelected() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubCreateConneXionPage createConneXion = new MyHubCreateConneXionPage(driver);
@@ -430,7 +422,7 @@ public class MyHubPageTests extends BaseTest {
     }
 
 
-    @Test(priority = 14)
+    @Test(priority = 15)
     @Ignore
     public void testAccessToTheViewLink_ShouldSuccessfullyOpenTheViewLink() {
         MyHubPage myHubPage = new MyHubPage(driver);
@@ -476,7 +468,7 @@ public class MyHubPageTests extends BaseTest {
         appiumDriver.executeScript("mobile: swipe", scrollParams);
     }
 
-    @Test(priority = 15)
+    @Test(priority = 16)
     @Ignore
     public void testAccessToTheWealthReportLink_ShouldSuccessfullyOpenTheWealthReportLink() {
         MyHubPage myHubPage = new MyHubPage(driver);

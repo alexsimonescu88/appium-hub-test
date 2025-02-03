@@ -41,38 +41,38 @@ public class MyHubCreateContactPage extends BasePage {
     }
 
     public WebElement getMyHubButton() {
-        return waitForClickability(myHubButton, 10);
+        return waitForClickability(myHubButton, 20);
     }
 
     public WebElement getDuplicateCheckLabel() {
-        return waitForVisibility(duplicateCheckLabel, 10);
+        return waitForVisibility(duplicateCheckLabel, 20);
     }
 
     public WebElement getSearchButton() {
-        return waitForClickability(searchButton, 10);
+        return waitForClickability(searchButton, 20);
     }
 
     public WebElement getSearchLabel() {
-        return waitForVisibility(searchLabel, 10);
+        return waitForVisibility(searchLabel, 20);
     }
 
     public WebElement getNameField() {
-        return waitForClickability(nameField, 10);
+        return waitForClickability(nameField, 20);
     }
 
     public WebElement getEmailPhoneField() {
-        return waitForClickability(emailPhoneField, 10);
+        return waitForClickability(emailPhoneField, 20);
     }
 
     public WebElement getCompanyRegistrationField() {
-        return waitForClickability(companyRegistrationField, 10);
+        return waitForClickability(companyRegistrationField, 20);
     }
 
     public WebElement getArrowRightButton() {
-        return waitForClickability(arrowRightButton, 10);
+        return waitForClickability(arrowRightButton, 20);
     }
 
     public WebElement getLocationField() {
-        return waitForClickability(locationField, 10);
+        return waitForClickability(locationField, 20);
     }
 }

@@ -15,7 +15,7 @@ import java.util.Date;
 
 public class HubCalendarPageTests extends BaseTest {
 
-    @Test(priority = 1)
+    @Test
     public void testAccessToHubCalendarPageTestAndToggleThroughDates_shouldSuccessfullyAccessAndToggleThroughCalendarPageDates() {
         MyHubPage myHubPage = new MyHubPage(driver);
         HubPage hubPage = new HubPage(driver);

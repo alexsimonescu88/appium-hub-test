@@ -131,158 +131,158 @@ public class MyHubPage extends BasePage {
     }
 
     public WebElement getMyHubLabel() {
-        return waitForVisibility(myHubLabel, 10);
+        return waitForVisibility(myHubLabel, 20);
     }
 
     public WebElement getAppointmentsLabel() {
-        return waitForVisibility(appointmentsLabel, 10);
+        return waitForVisibility(appointmentsLabel, 20);
     }
 
     public WebElement getAppointmentsChevronDown() {
-        return waitForClickability(appointmentsChevronDown, 10);
+        return waitForClickability(appointmentsChevronDown, 20);
     }
 
     public WebElement getAppointmentsChevronUp() {
-        return waitForClickability(appointmentsChevronUp, 10);
+        return waitForClickability(appointmentsChevronUp, 20);
     }
 
     public WebElement getAppointmentsYesterdayButton() {
-        return waitForClickability(appointmentsYesterdayButton, 10);
+        return waitForClickability(appointmentsYesterdayButton, 20);
     }
 
     public WebElement getAppointmentsTodayButton() {
-        return waitForClickability(appointmentsTodayButton, 10);
+        return waitForClickability(appointmentsTodayButton, 20);
     }
 
     public WebElement getAppointmentsTomorrowButton() {
-        return waitForClickability(appointmentsTomorrowButton, 10);
+        return waitForClickability(appointmentsTomorrowButton, 20);
     }
 
 //    public WebElement getAppointmentsNoItemsText() {
-//        return waitForVisibility(appointmentsNoItemsText, 10);
+//        return waitForVisibility(appointmentsNoItemsText, 20);
 //    }
 //
 //    public WebElement getAppointmentMobileTestingText() {
-//        return waitForVisibility(appointmentMobileTestingText, 10);
+//        return waitForVisibility(appointmentMobileTestingText, 20);
 //    }
 //
 //    public WebElement getAppointmentsMobileBacklogText() {
-//        return waitForVisibility(appointmentsMobileBacklogText, 10);
+//        return waitForVisibility(appointmentsMobileBacklogText, 20);
 //    }
 
     public WebElement getFavouritesLabel() {
-        return waitForVisibility(favouritesLabel, 10);
+        return waitForVisibility(favouritesLabel, 20);
     }
 
     public WebElement getFavouritesLastCard() {
-        return waitForClickability(favouritesLastCard, 10);
+        return waitForClickability(favouritesLastCard, 20);
     }
 
     public WebElement getFavouritesScrollView() {
-        return waitForClickability(favouritesScrollView, 10);
+        return waitForClickability(favouritesScrollView, 20);
     }
 
     public WebElement getMyCallbacksLabel() {
-        return waitForVisibility(myCallbacksLabel, 10);
+        return waitForVisibility(myCallbacksLabel, 20);
     }
 
     public WebElement getMyCallbacksChevronDown() {
-        return waitForClickability(myCallbacksChevronDown, 10);
+        return waitForClickability(myCallbacksChevronDown, 20);
     }
 
     public WebElement getMyCallbacksChevronUp() {
-        return waitForClickability(myCallbacksChevronUp, 10);
+        return waitForClickability(myCallbacksChevronUp, 20);
     }
 
     public WebElement getSelectionOptions() {
-        return waitForClickability(selectionOptions, 10);
+        return waitForClickability(selectionOptions, 20);
     }
 
     public WebElement getCallbacksActivityButton() {
-        return waitForClickability(callbacksActivityButton, 10);
+        return waitForClickability(callbacksActivityButton, 20);
     }
 
     public WebElement getCallbacksKeepInTouchButton() {
-        return waitForClickability(callbacksKeepInTouchButton, 10);
+        return waitForClickability(callbacksKeepInTouchButton, 20);
     }
 
     public WebElement getCallbacksNotInstructedButton() {
-        return waitForClickability(callbacksNotInstructedButton, 10);
+        return waitForClickability(callbacksNotInstructedButton, 20);
     }
 
     public WebElement getCallbacksRequirementButton() {
-        return waitForClickability(callbacksRequirementButton, 10);
+        return waitForClickability(callbacksRequirementButton, 20);
     }
 
     public WebElement getCallbacksTodayButton() {
-        return waitForClickability(callbacksTodayButton, 10);
+        return waitForClickability(callbacksTodayButton, 20);
     }
 
     public WebElement getCallbacksUpcomingButton() {
-        return waitForClickability(callbacksUpcomingButton, 10);
+        return waitForClickability(callbacksUpcomingButton, 20);
     }
 
     public WebElement getCallbacksOverdueButton() {
-        return waitForClickability(callbacksOverdueButton, 10);
+        return waitForClickability(callbacksOverdueButton, 20);
     }
 
     public WebElement getCallbacksNoCallbacksText() {
-        return waitForVisibility(callbacksNoCallbacksText, 10);
+        return waitForVisibility(callbacksNoCallbacksText, 20);
     }
 
     public WebElement getExploreHubMobileLabel() {
-        return waitForVisibility(exploreHubMobileLabel, 10);
+        return waitForVisibility(exploreHubMobileLabel, 20);
     }
 
     public WebElement getHubQuickLinksLabel() {
-        return waitForVisibility(hubQuickLinksLabel, 10);
+        return waitForVisibility(hubQuickLinksLabel, 20);
     }
 
     public WebElement getActivitySearchButton() {
-        return waitForClickability(activitySearchButton, 10);
+        return waitForClickability(activitySearchButton, 20);
     }
 
     public WebElement getRequirementSearchButton() {
-        return waitForClickability(requirementSearchButton, 10);
+        return waitForClickability(requirementSearchButton, 20);
     }
 
     public WebElement getPropertySearchButton() {
-        return waitForClickability(propertySearchButton, 10);
+        return waitForClickability(propertySearchButton, 20);
     }
 
     public WebElement getContactSearchButton() {
-        return waitForClickability(contactSearchButton, 10);
+        return waitForClickability(contactSearchButton, 20);
     }
 
     public WebElement getCreateContactButton() {
-        return waitForClickability(createContactButton, 10);
+        return waitForClickability(createContactButton, 20);
     }
 
     public WebElement getCreateConneXionButton() {
-        return waitForClickability(createConneXionButton, 10);
+        return waitForClickability(createConneXionButton, 20);
     }
 
     public WebElement getKnightFrankLinksLabel() {
-        return waitForVisibility(knightFrankLinksLabel, 10);
+        return waitForVisibility(knightFrankLinksLabel, 20);
     }
 
     public WebElement getTheViewButton() {
-        return waitForClickability(theViewButton, 10);
+        return waitForClickability(theViewButton, 20);
     }
 
     public WebElement getTheWealthReportButton() {
-        return waitForClickability(theWealthReportButton, 10);
+        return waitForClickability(theWealthReportButton, 20);
     }
 
     public WebElement getHorizontalScroll() {
-        return waitForClickability(horizontalScroll, 10);
+        return waitForClickability(horizontalScroll, 20);
     }
 
     public WebElement getVerticalScroll() {
-        return waitForClickability(verticalScroll, 10);
+        return waitForClickability(verticalScroll, 20);
     }
 
     public WebElement getHubButton() {
-        return waitForClickability(hubButton, 10);
+        return waitForClickability(hubButton, 20);
     }
 }

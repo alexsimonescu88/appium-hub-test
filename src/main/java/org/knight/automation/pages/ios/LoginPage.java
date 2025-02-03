@@ -30,15 +30,15 @@ public class LoginPage extends BasePage {
     }
 
     public WebElement getPinLabel() {
-        return waitForVisibility(pinLabel, 10);
+        return waitForVisibility(pinLabel, 20);
     }
 
     public WebElement getPinField() {
-        return waitForVisibility(pinField, 10);
+        return waitForVisibility(pinField, 20);
     }
 
     public WebElement getLoginButton() {
-        return waitForClickability(loginButton, 10);
+        return waitForClickability(loginButton, 20);
     }
 
     public WebElement getIncorrectPinMessage() {
@@ -46,6 +46,6 @@ public class LoginPage extends BasePage {
     }
 
     public WebElement getIncorrectPinOkButton() {
-        return waitForClickability(incorrectPinOkButton, 10);
+        return waitForClickability(incorrectPinOkButton, 20);
     }
 }

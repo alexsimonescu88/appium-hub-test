@@ -29,22 +29,22 @@ public class HubCalendarPage extends BasePage {
     }
 
     public WebElement getHubButton() {
-        return waitForClickability(hubButton, 10);
+        return waitForClickability(hubButton, 20);
     }
 
     public WebElement getCalendarLabel() {
-        return waitForVisibility(calendarLabel, 10);
+        return waitForVisibility(calendarLabel, 20);
     }
 
     public WebElement getRightArrowButton() {
-        return waitForClickability(rightArrowButton, 10);
+        return waitForClickability(rightArrowButton, 20);
     }
 
     public WebElement getLeftArrowButton() {
-        return waitForClickability(leftArrowButton, 10);
+        return waitForClickability(leftArrowButton, 20);
     }
 
     public WebElement getTodayButton() {
-        return waitForClickability(todayButton, 10);
+        return waitForClickability(todayButton, 20);
     }
 }

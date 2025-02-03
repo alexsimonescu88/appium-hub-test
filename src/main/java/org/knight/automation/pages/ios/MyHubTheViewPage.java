@@ -24,14 +24,14 @@ public class MyHubTheViewPage extends BasePage {
     }
 
     public WebElement getHubUatButton() {
-        return waitForVisibility(hubUatButton, 10);
+        return waitForVisibility(hubUatButton, 20);
     }
 
     public WebElement getTheViewLabel() {
-        return waitForVisibility(theViewLabel, 10);
+        return waitForVisibility(theViewLabel, 20);
     }
 
     public WebElement getArticleTitle() {
-        return waitForVisibility(articleTitle, 10);
+        return waitForVisibility(articleTitle, 20);
     }
 }

@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class HubCompaniesSearchPageTests extends BaseTest {
 
-    @Test(priority = 1)
+    @Test
     public void testAccessAndSearchInputToHubCompaniesSearchPage_shouldSuccessfullyOpenHubCompaniesSearchPageAndDisplayResultsBasedOnInputs() {
         MyHubPage myHubPage = new MyHubPage(driver);
         HubPage hubPage = new HubPage(driver);

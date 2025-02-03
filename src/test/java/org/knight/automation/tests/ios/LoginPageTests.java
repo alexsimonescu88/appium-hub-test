@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class LoginPageTests extends BaseTest {
 
-    @Test
+    @Test(priority = 1)
     public void testLoginWithInvalidCredentials_ShouldShowErrorMessage() {
 
         LoginPage loginPage = new LoginPage(driver);
@@ -33,7 +33,7 @@ public class LoginPageTests extends BaseTest {
         Assert.assertEquals(pinFieldPlaceholder, "Enter PIN");
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void testLoginWithValidCredentials_ShouldLoginSuccessfully() {
         LoginPage loginPage = new LoginPage(driver);
         Assert.assertEquals(loginPage.getPinField().getText(), "Enter PIN");

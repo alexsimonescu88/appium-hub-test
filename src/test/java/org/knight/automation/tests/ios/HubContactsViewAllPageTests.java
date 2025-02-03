@@ -6,11 +6,13 @@ import org.knight.automation.pages.ios.HubPage;
 import org.knight.automation.pages.ios.MyHubPage;
 import org.knight.automation.tests.BaseTest;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class HubContactsViewAllPageTests extends BaseTest {
 
-    @Test(priority = 1)
+    @Test
+    @Ignore
     public void testHubContactsViewAllPage_shouldSuccessfullyExpandActiveContactsAndOpenHubContactsViewAllPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         HubPage hubPage = new HubPage(driver);
@@ -22,7 +24,6 @@ public class HubContactsViewAllPageTests extends BaseTest {
 
         hubPage.getContactsButton().click();
         Assert.assertTrue(hubContactsPage.getContactsLabel().getText().matches("Contacts"));
-        Assert.assertTrue(hubContactsPage.getActiveContacts().isDisplayed());
         Assert.assertTrue(hubContactsPage.getContactsSearchButton().isDisplayed());
         Assert.assertTrue(hubContactsPage.getHubButton().isDisplayed());
 

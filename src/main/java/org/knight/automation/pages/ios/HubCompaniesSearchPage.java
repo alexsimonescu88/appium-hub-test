@@ -29,22 +29,22 @@ public class HubCompaniesSearchPage extends BasePage {
     }
 
     public WebElement getCompaniesButton() {
-        return waitForClickability(companiesButton, 10);
+        return waitForClickability(companiesButton, 20);
     }
 
     public WebElement getSearchLabel() {
-        return waitForVisibility(searchLabel, 10);
+        return waitForVisibility(searchLabel, 20);
     }
 
     public WebElement getSearchField() {
-        return waitForClickability(searchField, 10);
+        return waitForClickability(searchField, 20);
     }
 
     public WebElement getClearSearchButton() {
-        return waitForClickability(clearSearchButton, 10);
+        return waitForClickability(clearSearchButton, 20);
     }
 
     public WebElement getVerticalScrollView() {
-        return waitForClickability(verticalScrollView, 10);
+        return waitForClickability(verticalScrollView, 20);
     }
 }

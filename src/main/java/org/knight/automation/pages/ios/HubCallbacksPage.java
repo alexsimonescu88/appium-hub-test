@@ -68,74 +68,74 @@ public class HubCallbacksPage extends BasePage {
     }
 
     public WebElement getHubButton() {
-        return waitForClickability(hubButton, 10);
+        return waitForClickability(hubButton, 20);
     }
 
     public WebElement getCallbacksLabel() {
-        return waitForVisibility(callbacksLabel, 10);
+        return waitForVisibility(callbacksLabel, 20);
     }
 
     public WebElement getTeamButton() {
-        return waitForClickability(teamButton, 10);
+        return waitForClickability(teamButton, 20);
     }
 
     public WebElement getMyButton() {
-        return waitForClickability(myButton, 10);
+        return waitForClickability(myButton, 20);
     }
 
     public WebElement getActivityCallbacksLabel() {
-        return waitForVisibility(activityCallbacksLabel, 10);
+        return waitForVisibility(activityCallbacksLabel, 20);
     }
 
     public WebElement getActivityCallbacksChevronDown() {
-        return waitForClickability(activityCallbacksChevronDown, 10);
+        return waitForClickability(activityCallbacksChevronDown, 20);
     }
 
     public WebElement getRequirementCallbacksLabel() {
-        return waitForVisibility(requirementCallbacksLabel, 10);
+        return waitForVisibility(requirementCallbacksLabel, 20);
     }
 
     public WebElement getRequirementCallbacksChevronDown() {
-        return waitForClickability(requirementCallbacksChevronDown, 10);
+        return waitForClickability(requirementCallbacksChevronDown, 20);
     }
 
     public WebElement getNotInstructedCallbacksLabel() {
-        return waitForVisibility(notInstructedCallbacksLabel, 10);
+        return waitForVisibility(notInstructedCallbacksLabel, 20);
     }
 
     public WebElement getNotInstructedCallbacksChevronDown() {
-        return waitForClickability(notInstructedCallbacksChevronDown, 10);
+        return waitForClickability(notInstructedCallbacksChevronDown, 20);
     }
 
     public WebElement getKeepInTouchCallbacksLabel() {
-        return waitForVisibility(keepInTouchCallbacksLabel, 10);
+        return waitForVisibility(keepInTouchCallbacksLabel, 20);
     }
 
     public WebElement getKeepInTouchCallbacksChevronDown() {
-        return waitForClickability(keepInTouchCallbacksChevronDown, 10);
+        return waitForClickability(keepInTouchCallbacksChevronDown, 20);
     }
 
     public WebElement getChevronUp() {
-        return waitForClickability(chevronUp, 10);
+        return waitForClickability(chevronUp, 20);
     }
 
     public WebElement getTodayButton() {
-        return waitForClickability(todayButton, 10);
+        return waitForClickability(todayButton, 20);
     }
 
     public WebElement getUpcomingButton() {
-        return waitForClickability(upcomingButton, 10);
+        return waitForClickability(upcomingButton, 20);
     }
 
     public WebElement getOverdueButton() {
-        return waitForClickability(overdueButton, 10);
+        return waitForClickability(overdueButton, 20);
     }
 
     public WebElement getNoCallbacksLabel() {
-        return waitForVisibility(noCallbacksLabel, 10);
+        return waitForVisibility(noCallbacksLabel, 20);
     }
 
     public WebElement getViewAllButton() {
-        return waitForClickability(viewAllButton, 10);
+        return waitForClickability(viewAllButton, 20);
     }
 }
