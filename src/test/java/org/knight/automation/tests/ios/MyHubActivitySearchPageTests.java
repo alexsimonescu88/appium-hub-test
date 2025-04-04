@@ -4,13 +4,11 @@ import io.appium.java_client.AppiumDriver;
 import org.knight.automation.pages.ios.MyHubActivitySearchPage;
 import org.knight.automation.pages.ios.MyHubPage;
 import org.knight.automation.tests.BaseTest;
+import org.knight.automation.tests.utils.Scrollable;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class MyHubActivitySearchPageTests extends BaseTest {
+public class MyHubActivitySearchPageTests extends BaseTest implements Scrollable {
 
     @Test
     public void testActivitySearch_ShouldSuccessfullySearchAnActivity() {
@@ -31,19 +29,9 @@ public class MyHubActivitySearchPageTests extends BaseTest {
         String londonSearch = myHubActivitySearchPage.getSearchField().getText();
 
         AppiumDriver appiumDriver = (AppiumDriver) this.driver;
-        Map<String, Object> scrollParams = new HashMap<>();
 
-        scrollParams.put("direction", "up");
-        scrollParams.put("element", myHubActivitySearchPage.getVerticalScrollView());
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-
-        scrollParams.put("direction", "down");
-        scrollParams.put("element", myHubActivitySearchPage.getVerticalScrollView());
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
+        scroll("up", myHubActivitySearchPage.getVerticalScrollView(), appiumDriver);
+        scroll("down", myHubActivitySearchPage.getVerticalScrollView(), appiumDriver);
 
         Assert.assertEquals(myHubActivitySearchPage.getSearchField().getText(), londonSearch);
 

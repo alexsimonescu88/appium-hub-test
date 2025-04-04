@@ -1,15 +1,16 @@
 package org.knight.automation.tests.ios;
 
 import io.appium.java_client.AppiumDriver;
-import org.knight.automation.pages.ios.*;
+import org.knight.automation.pages.ios.HubPage;
+import org.knight.automation.pages.ios.HubRequirementsPage;
+import org.knight.automation.pages.ios.HubRequirementsSearchPage;
+import org.knight.automation.pages.ios.MyHubPage;
 import org.knight.automation.tests.BaseTest;
+import org.knight.automation.tests.utils.Scrollable;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class HubRequirementsSearchPageTests extends BaseTest {
+public class HubRequirementsSearchPageTests extends BaseTest implements Scrollable {
 
     @Test
     public void testAccessAndSearchResultsForHubRequirementsSearchPage_shouldSuccessfullyAccessAndDisplaySearchResults() {
@@ -36,15 +37,9 @@ public class HubRequirementsSearchPageTests extends BaseTest {
         hubRequirementsSearchPage.getAllButton().click();
 
         AppiumDriver appiumDriver = (AppiumDriver) this.driver;
-        Map<String, Object> scrollParams = new HashMap<>();
-        scrollParams.put("direction", "up");
-        scrollParams.put("element", hubRequirementsSearchPage.getVerticalScrollView());
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
 
-
-        scrollParams.put("direction", "down");
-        scrollParams.put("element", hubRequirementsSearchPage.getVerticalScrollView());
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
+        scroll("up", hubRequirementsSearchPage.getVerticalScrollView(), appiumDriver);
+        scroll("down", hubRequirementsSearchPage.getVerticalScrollView(), appiumDriver);
 
         hubRequirementsSearchPage.getClearSearch().click();
         hubRequirementsSearchPage.getRequirementsButton().click();

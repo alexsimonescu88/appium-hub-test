@@ -6,13 +6,11 @@ import org.knight.automation.pages.ios.HubCompaniesSearchPage;
 import org.knight.automation.pages.ios.HubPage;
 import org.knight.automation.pages.ios.MyHubPage;
 import org.knight.automation.tests.BaseTest;
+import org.knight.automation.tests.utils.Scrollable;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class HubCompaniesSearchPageTests extends BaseTest {
+public class HubCompaniesSearchPageTests extends BaseTest implements Scrollable {
 
     @Test
     public void testAccessAndSearchInputToHubCompaniesSearchPage_shouldSuccessfullyOpenHubCompaniesSearchPageAndDisplayResultsBasedOnInputs() {
@@ -37,15 +35,8 @@ public class HubCompaniesSearchPageTests extends BaseTest {
         hubCompaniesSearchPage.getSearchField().sendKeys(searchInput);
 
         AppiumDriver appiumDriver = (AppiumDriver) this.driver;
-        Map<String, Object> scrollParams = new HashMap<>();
-        scrollParams.put("direction", "up");
-        scrollParams.put("element", hubCompaniesSearchPage.getVerticalScrollView());
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
-
-
-        scrollParams.put("direction", "down");
-        scrollParams.put("element", hubCompaniesSearchPage.getVerticalScrollView());
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
+        scroll("up", hubCompaniesSearchPage.getVerticalScrollView(), appiumDriver);
+        scroll("down", hubCompaniesSearchPage.getVerticalScrollView(), appiumDriver);
 
         hubCompaniesSearchPage.getClearSearchButton().click();
         hubCompaniesSearchPage.getCompaniesButton().click();

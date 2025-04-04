@@ -119,7 +119,7 @@ public class MyHubPage extends BasePage {
     @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"hub Uat\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView")
     private WebElement horizontalScroll;
 
-    @FindBy(xpath = "(//XCUIElementTypeOther[@name=\"Vertical scroll bar, 2 pages\"])[2]")
+    @FindBy(xpath = "(//XCUIElementTypeOther[@name=\"Vertical scroll bar, 2 pages\"])[1]")
     private WebElement verticalScroll;
 
     @FindBy(id = "hub")
