@@ -38,7 +38,7 @@ public class HubPage extends BasePage {
     @FindBy(id = "dashboard_callbacks")
     private WebElement callbacksButton;
 
-    @FindBy(id = "My hub")
+    @FindBy(xpath = "//XCUIElementTypeImage[@name=\"house.fill\"]")
     private WebElement myHubButton;
 
     @FindBy(xpath = "//XCUIElementTypeButton[@name=\"hub\"]")

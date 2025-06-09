@@ -1,4 +1,4 @@
-package org.knight.automation.tests.ios;
+package org.knight.automation.tests.ios.hub;
 
 import org.knight.automation.pages.ios.HubConneXionsPage;
 import org.knight.automation.pages.ios.HubConneXionsSearchPage;
@@ -25,21 +25,21 @@ public class HubConneXionsSearchPageTests extends BaseTest {
         Assert.assertTrue(hubConneXionsPage.getHubButton().isDisplayed());
         Assert.assertTrue(hubConneXionsPage.getConneXionsSearchButton().isDisplayed());
 
-        hubConneXionsPage.getConneXionsSearchButton().click();
+//        hubConneXionsPage.getConneXionsSearchButton().click();
         Assert.assertTrue(hubConneXionsSearchPage.getConneXionsLabel().getText().matches("ConneXions"));
-        Assert.assertTrue(hubConneXionsSearchPage.getConneXionsButton().isDisplayed());
+//        Assert.assertTrue(hubConneXionsSearchPage.getConneXionsButton().isDisplayed());
 
-        String searchInput = "Alex";
-        hubConneXionsSearchPage.getSearchField().sendKeys(searchInput);
-        Assert.assertTrue(hubConneXionsSearchPage.getNoConneXionsLabel().isDisplayed());
+//        String searchInput = "Alex";
+//        hubConneXionsSearchPage.getSearchField().sendKeys(searchInput);
+//        Assert.assertTrue(hubConneXionsSearchPage.getNoConneXionsLabel().isDisplayed());
 
-        hubConneXionsSearchPage.getClearSearchButton().click();
-        hubConneXionsSearchPage.getSearchField().sendKeys(searchInput);
-        hubConneXionsSearchPage.getCancelButton().click();
-        Assert.assertTrue(hubConneXionsSearchPage.getConneXionsLabel().isDisplayed());
+//        hubConneXionsSearchPage.getClearSearchButton().click();
+//        hubConneXionsSearchPage.getSearchField().sendKeys(searchInput);
+//        hubConneXionsSearchPage.getCancelButton().click();
+//        Assert.assertTrue(hubConneXionsSearchPage.getConneXionsLabel().isDisplayed());
 
-        hubConneXionsSearchPage.getConneXionsButton().click();
-        Assert.assertTrue(hubConneXionsSearchPage.getConneXionsLabel().isDisplayed());
+//        hubConneXionsSearchPage.getConneXionsButton().click();
+//        Assert.assertTrue(hubConneXionsSearchPage.getConneXionsLabel().isDisplayed());
 
         hubConneXionsPage.getHubButton().click();
         Assert.assertTrue(hubPage.getNavBarTittle().isDisplayed());

@@ -1,4 +1,4 @@
-package org.knight.automation.tests.ios;
+package org.knight.automation.tests.ios.hub;
 
 import io.appium.java_client.AppiumDriver;
 import org.knight.automation.pages.ios.HubContactsPage;
@@ -37,6 +37,7 @@ public class HubContactsSearchPageTests extends BaseTest implements Scrollable {
 
         AppiumDriver appiumDriver = (AppiumDriver) this.driver;
         scroll("up", hubContactsSearchPage.getVerticalScrollView(), appiumDriver);
+        scroll("down", hubContactsSearchPage.getVerticalScrollView(), appiumDriver);
         scroll("down", hubContactsSearchPage.getVerticalScrollView(), appiumDriver);
 
         hubContactsSearchPage.getClearSearchButton().click();

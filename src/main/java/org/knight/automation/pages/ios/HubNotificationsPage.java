@@ -14,7 +14,7 @@ public class HubNotificationsPage extends BasePage {
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Notifications\"]")
     private WebElement notificationsLabel;
 
-    @FindBy(id = "filter icon")
+    @FindBy(xpath = "//XCUIElementTypeOther[@name=\"filter_icon\"]")
     private WebElement notificationsFilterButton;
 
     public HubNotificationsPage(WebDriver driver) {

@@ -111,7 +111,7 @@ public class MyHubPage extends BasePage {
     @FindBy(id = "Home_Button_QuickLinkContact")
     private WebElement contactSearchButton;
 
-    @FindBy(id = "Home_Button_QuickLinkCreateContact")
+    @FindBy(id = "Home_Button_QuickLinkContact")
     private WebElement createContactButton;
 
     @FindBy(id = "Home_Button_QuickLinkCreateConnexion")

@@ -1,4 +1,4 @@
-package org.knight.automation.tests.ios;
+package org.knight.automation.tests.ios.hub;
 
 import org.knight.automation.pages.ios.HubCallbacksPage;
 import org.knight.automation.pages.ios.HubCallbacksViewAllPage;

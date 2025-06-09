@@ -1,4 +1,4 @@
-package org.knight.automation.tests.ios;
+package org.knight.automation.tests.ios.hub;
 
 import org.knight.automation.tests.BaseTest;
 

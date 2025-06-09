@@ -1,4 +1,4 @@
-package org.knight.automation.tests.ios;
+package org.knight.automation.tests.ios.hub;
 
 import io.appium.java_client.AppiumDriver;
 import org.knight.automation.pages.ios.HubPage;

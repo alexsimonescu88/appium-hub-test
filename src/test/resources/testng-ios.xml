@@ -3,26 +3,26 @@
     <parameter name="platform" value="iOS"/>
     <test name="iOSTests">
         <classes>
-            <class name="org.knight.automation.tests.ios.LoginPageTests"/>
-            <class name="org.knight.automation.tests.ios.MyHubPageTests"/>
-            <class name="org.knight.automation.tests.ios.MyHubActivitySearchPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubContactsPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubContactsViewAllPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubContactsSearchPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubCompaniesPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubCompaniesSearchPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubPropertiesPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubActivitiesPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubActivitiesSearchPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubRequirementsPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubRequirementsSearchPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubConneXionsPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubConneXionsSearchPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubCalendarPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubNotificationsPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubCallbacksPageTests"/>
-            <class name="org.knight.automation.tests.ios.HubCallbacksViewAllPageTests"/>
+            <class name="org.knight.automation.tests.ios.login.LoginPageTests"/>
+            <class name="org.knight.automation.tests.ios.myhub.MyHubPageTests"/>
+            <class name="org.knight.automation.tests.ios.myhub.MyHubActivitySearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubContactsPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubContactsViewAllPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubContactsSearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubCompaniesPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubCompaniesSearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubPropertiesPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubActivitiesPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubActivitiesSearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubRequirementsPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubRequirementsSearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubConneXionsPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubConneXionsSearchPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubCalendarPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubNotificationsPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubCallbacksPageTests"/>
+            <class name="org.knight.automation.tests.ios.hub.HubCallbacksViewAllPageTests"/>
         </classes>
     </test>
 </suite>

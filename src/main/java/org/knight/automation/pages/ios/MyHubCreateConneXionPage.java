@@ -11,10 +11,10 @@ public class MyHubCreateConneXionPage extends BasePage {
     @FindBy(id = "My hub")
     private WebElement myHubButton;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"My contacts\"]")
+    @FindBy(xpath = "My contacts")
     private WebElement myContactsTitle;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"All contacts\"]")
+    @FindBy(id = "All contacts")
     private WebElement allContactsTitle;
 
     @FindBy(id = "Search")

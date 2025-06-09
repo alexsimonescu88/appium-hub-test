@@ -1,4 +1,4 @@
-package org.knight.automation.tests.ios;
+package org.knight.automation.tests.ios.login;
 
 import org.knight.automation.pages.ios.LoginPage;
 import org.knight.automation.pages.ios.MyHubPage;

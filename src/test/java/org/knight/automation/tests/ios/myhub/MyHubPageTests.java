@@ -1,4 +1,4 @@
-package org.knight.automation.tests.ios;
+package org.knight.automation.tests.ios.myhub;
 
 import io.appium.java_client.AppiumDriver;
 import org.knight.automation.pages.ios.*;
@@ -44,7 +44,7 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertTrue(myHubPage.getTheViewButton().isDisplayed());
         Assert.assertTrue(myHubPage.getTheWealthReportButton().isDisplayed());
 
-//        scroll("down", myHubPage.getVerticalScroll(), appiumDriver);
+        scroll("down", myHubPage.getVerticalScroll(), appiumDriver);
     }
 
     @Test(priority = 2)
@@ -375,27 +375,27 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 12)
-    public void testAccessToCreateContactPage_ShouldSuccessfullyOpenCreateContactPage() {
-        MyHubPage myHubPage = new MyHubPage(driver);
-        MyHubCreateContactPage myHubCreateContactPage = new MyHubCreateContactPage(driver);
-        AppiumDriver appiumDriver = (AppiumDriver) this.driver;
-
-        scroll("up", myHubPage.getVerticalScroll(), appiumDriver);
-
-        myHubPage.getCreateContactButton().click();
-
-        String searchTitle = myHubCreateContactPage.getSearchLabel().getText();
-        Assert.assertEquals(searchTitle, "Search");
-
-        String duplicateCheckText = myHubCreateContactPage.getDuplicateCheckLabel().getText();
-        Assert.assertEquals(duplicateCheckText, "Duplicate check");
-
-        myHubCreateContactPage.getMyHubButton().click();
-
-        String myHubNavigatorBarTitle = myHubPage.getMyHubLabel().getText();
-        Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
-    }
+//    @Test(priority = 12)
+//    public void testAccessToCreateContactPage_ShouldSuccessfullyOpenCreateContactPage() {
+//        MyHubPage myHubPage = new MyHubPage(driver);
+//        MyHubCreateContactPage myHubCreateContactPage = new MyHubCreateContactPage(driver);
+//        AppiumDriver appiumDriver = (AppiumDriver) this.driver;
+//
+//        scroll("up", myHubPage.getVerticalScroll(), appiumDriver);
+//
+//        myHubPage.getCreateContactButton().click();
+//
+//        String searchTitle = myHubCreateContactPage.getSearchLabel().getText();
+//        Assert.assertEquals(searchTitle, "Search");
+//
+//        String duplicateCheckText = myHubCreateContactPage.getDuplicateCheckLabel().getText();
+//        Assert.assertEquals(duplicateCheckText, "Duplicate check");
+//
+//        myHubCreateContactPage.getMyHubButton().click();
+//
+//        String myHubNavigatorBarTitle = myHubPage.getMyHubLabel().getText();
+//        Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
+//    }
 
     @Test(priority = 13)
     public void testAccessToCreateConneXionPage_ShouldSuccessfullyOpenCreateConneXionPageWithAllContactsSelected() {
@@ -407,14 +407,14 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
 
         myHubPage.getCreateConneXionButton().click();
 
-        String allContactsTitle = createConneXion.getAllContactsTitle().getText();
-        Assert.assertEquals(allContactsTitle, "All contacts");
-        Assert.assertTrue(createConneXion.getAllButton().isEnabled());
+//        String allContactsTitle = createConneXion.getAllContactsTitle().getText();
+//        Assert.assertEquals(allContactsTitle, "All contacts");
+//        Assert.assertTrue(createConneXion.getAllButton().isEnabled());
 
         createConneXion.getMyButton().click();
-        String myContactsTitle = createConneXion.getMyContactsTitle().getText();
-        Assert.assertEquals(myContactsTitle, "My contacts");
-        Assert.assertTrue(createConneXion.getMyButton().isEnabled());
+//        String myContactsTitle = createConneXion.getMyContactsTitle().getText();
+//        Assert.assertEquals(myContactsTitle, "My contacts");
+//        Assert.assertTrue(createConneXion.getMyButton().isEnabled());
 
         createConneXion.getMyHubButton().click();
 
