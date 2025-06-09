@@ -23,7 +23,7 @@ public class MyHubCreateConneXionPage extends BasePage {
     @FindBy(id = "My")
     private WebElement myButton;
 
-    @FindBy(id = "ALl")
+    @FindBy(id = "All")
     private WebElement allButton;
 
     @FindBy(id = "No results matched your search")

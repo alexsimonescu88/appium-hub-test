@@ -32,7 +32,7 @@ public class HubActivitiesSearchPage extends BasePage {
     @FindBy(xpath = "//XCUIElementTypeScrollView")
     private WebElement verticalScrollView;
 
-    @FindBy(id = "multiply.circle.fill")
+    @FindBy(id = "X Circle")
     private WebElement clearSearchButton;
 
     public HubActivitiesSearchPage(WebDriver driver) {

@@ -17,7 +17,7 @@ public class HubContactsSearchPage extends BasePage {
     @FindBy(xpath = "//XCUIElementTypeTextField[@value=\"Search for name, address, email, number\"]")
     private WebElement searchField;
 
-    @FindBy(id = "multiply.circle.fill")
+    @FindBy(id = "X Circle")
     private WebElement clearSearchButton;
 
     @FindBy(id = "My")

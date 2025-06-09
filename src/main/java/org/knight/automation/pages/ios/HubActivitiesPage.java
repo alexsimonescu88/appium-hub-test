@@ -14,7 +14,7 @@ public class HubActivitiesPage extends BasePage {
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Activities\"]")
     private WebElement activitiesLabel;
 
-    @FindBy(id = "Search")
+    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"magnifyingglass\"]")
     private WebElement activitiesSearchButton;
 
     @FindBy(id = "Team")

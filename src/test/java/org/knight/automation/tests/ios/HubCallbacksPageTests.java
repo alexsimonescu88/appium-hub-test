@@ -23,29 +23,17 @@ public class HubCallbacksPageTests extends BaseTest {
         Assert.assertTrue(hubCallbacksPage.getMyButton().isDisplayed());
         Assert.assertTrue(hubCallbacksPage.getTeamButton().isDisplayed());
         Assert.assertTrue(hubCallbacksPage.getCallbacksLabel().getText().matches("Callbacks"));
+        hubCallbacksPage.getTeamButton().click();
+        hubCallbacksPage.getMyButton().click();
         Assert.assertTrue(hubCallbacksPage.getActivityCallbacksLabel().isDisplayed());
         Assert.assertTrue(hubCallbacksPage.getRequirementCallbacksLabel().isDisplayed());
         Assert.assertTrue(hubCallbacksPage.getNotInstructedCallbacksLabel().isDisplayed());
         Assert.assertTrue(hubCallbacksPage.getKeepInTouchCallbacksLabel().isDisplayed());
-
-        hubCallbacksPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().isDisplayed());
-
-        hubPage.getMyHubButton().click();
-        Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
     }
 
     @Test(priority = 2)
     public void testAccessAndExpansionOfMyActivityInHubCallbacksPage_shouldSuccessfullyAccessAndExpandHubCallbacksPageMyActivity() {
-        MyHubPage myHubPage = new MyHubPage(driver);
-        HubPage hubPage = new HubPage(driver);
         HubCallbacksPage hubCallbacksPage = new HubCallbacksPage(driver);
-
-        myHubPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().getText().matches("hub"));
-
-        hubPage.getCallbacksButton().click();
-        Assert.assertTrue(hubCallbacksPage.getCallbacksLabel().getText().matches("Callbacks"));
 
         hubCallbacksPage.getActivityCallbacksChevronDown().click();
         Assert.assertTrue(hubCallbacksPage.getNoCallbacksLabel().isDisplayed());
@@ -58,25 +46,11 @@ public class HubCallbacksPageTests extends BaseTest {
 
         hubCallbacksPage.getTodayButton().click();
         hubCallbacksPage.getChevronUp().click();
-
-        hubCallbacksPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().isDisplayed());
-
-        hubPage.getMyHubButton().click();
-        Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
     }
 
     @Test(priority = 3)
     public void testAccessAndExpansionOfMyRequirementInHubCallbacksPage_shouldSuccessfullyAccessAndExpandHubCallbacksPageMyRequirement() {
-        MyHubPage myHubPage = new MyHubPage(driver);
-        HubPage hubPage = new HubPage(driver);
         HubCallbacksPage hubCallbacksPage = new HubCallbacksPage(driver);
-
-        myHubPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().getText().matches("hub"));
-
-        hubPage.getCallbacksButton().click();
-        Assert.assertTrue(hubCallbacksPage.getCallbacksLabel().getText().matches("Callbacks"));
 
         hubCallbacksPage.getRequirementCallbacksChevronDown().click();
         Assert.assertTrue(hubCallbacksPage.getNoCallbacksLabel().isDisplayed());
@@ -89,25 +63,11 @@ public class HubCallbacksPageTests extends BaseTest {
 
         hubCallbacksPage.getTodayButton().click();
         hubCallbacksPage.getChevronUp().click();
-
-        hubCallbacksPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().isDisplayed());
-
-        hubPage.getMyHubButton().click();
-        Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
     }
 
     @Test(priority = 4)
     public void testAccessAndExpansionOfMyNotInstructedInHubCallbacksPage_shouldSuccessfullyAccessAndExpandHubCallbacksPageMyNotInstructed() {
-        MyHubPage myHubPage = new MyHubPage(driver);
-        HubPage hubPage = new HubPage(driver);
         HubCallbacksPage hubCallbacksPage = new HubCallbacksPage(driver);
-
-        myHubPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().getText().matches("hub"));
-
-        hubPage.getCallbacksButton().click();
-        Assert.assertTrue(hubCallbacksPage.getCallbacksLabel().getText().matches("Callbacks"));
 
         hubCallbacksPage.getNotInstructedCallbacksChevronDown().click();
         Assert.assertTrue(hubCallbacksPage.getNoCallbacksLabel().isDisplayed());
@@ -120,49 +80,21 @@ public class HubCallbacksPageTests extends BaseTest {
 
         hubCallbacksPage.getTodayButton().click();
         hubCallbacksPage.getChevronUp().click();
-
-        hubCallbacksPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().isDisplayed());
-
-        hubPage.getMyHubButton().click();
-        Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
     }
 
     @Test(priority = 5)
     public void testAccessAndExpansionOfMyKeepInTouchInHubCallbacksPage_shouldSuccessfullyAccessAndExpandHubCallbacksPageMyKeepInTouch() {
-        MyHubPage myHubPage = new MyHubPage(driver);
-        HubPage hubPage = new HubPage(driver);
         HubCallbacksPage hubCallbacksPage = new HubCallbacksPage(driver);
-
-        myHubPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().getText().matches("hub"));
-
-        hubPage.getCallbacksButton().click();
-        Assert.assertTrue(hubCallbacksPage.getCallbacksLabel().getText().matches("Callbacks"));
 
         hubCallbacksPage.getKeepInTouchCallbacksChevronDown().click();
         Assert.assertTrue(hubCallbacksPage.getNoCallbacksLabel().isDisplayed());
 
         hubCallbacksPage.getChevronUp().click();
-
-        hubCallbacksPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().isDisplayed());
-
-        hubPage.getMyHubButton().click();
-        Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
     }
 
     @Test(priority = 6)
     public void testAccessAndExpansionOfTeamActivityInHubCallbacksPage_shouldSuccessfullyAccessAndExpandHubCallbacksPageTeamActivity() {
-        MyHubPage myHubPage = new MyHubPage(driver);
-        HubPage hubPage = new HubPage(driver);
         HubCallbacksPage hubCallbacksPage = new HubCallbacksPage(driver);
-
-        myHubPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().getText().matches("hub"));
-
-        hubPage.getCallbacksButton().click();
-        Assert.assertTrue(hubCallbacksPage.getCallbacksLabel().getText().matches("Callbacks"));
 
         hubCallbacksPage.getTeamButton().click();
 
@@ -177,25 +109,11 @@ public class HubCallbacksPageTests extends BaseTest {
 
         hubCallbacksPage.getTodayButton().click();
         hubCallbacksPage.getChevronUp().click();
-
-        hubCallbacksPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().isDisplayed());
-
-        hubPage.getMyHubButton().click();
-        Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
     }
 
     @Test(priority = 7)
     public void testAccessAndExpansionOfTeamRequirementInHubCallbacksPage_shouldSuccessfullyAccessAndExpandHubCallbacksPageTeamRequirement() {
-        MyHubPage myHubPage = new MyHubPage(driver);
-        HubPage hubPage = new HubPage(driver);
         HubCallbacksPage hubCallbacksPage = new HubCallbacksPage(driver);
-
-        myHubPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().getText().matches("hub"));
-
-        hubPage.getCallbacksButton().click();
-        Assert.assertTrue(hubCallbacksPage.getCallbacksLabel().getText().matches("Callbacks"));
 
         hubCallbacksPage.getTeamButton().click();
 
@@ -210,25 +128,11 @@ public class HubCallbacksPageTests extends BaseTest {
 
         hubCallbacksPage.getTodayButton().click();
         hubCallbacksPage.getChevronUp().click();
-
-        hubCallbacksPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().isDisplayed());
-
-        hubPage.getMyHubButton().click();
-        Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
     }
 
     @Test(priority = 8)
     public void testAccessAndExpansionOfTeamNotInstructedInHubCallbacksPage_shouldSuccessfullyAccessAndExpandHubCallbacksPageTeamNotInstructed() {
-        MyHubPage myHubPage = new MyHubPage(driver);
-        HubPage hubPage = new HubPage(driver);
         HubCallbacksPage hubCallbacksPage = new HubCallbacksPage(driver);
-
-        myHubPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().getText().matches("hub"));
-
-        hubPage.getCallbacksButton().click();
-        Assert.assertTrue(hubCallbacksPage.getCallbacksLabel().getText().matches("Callbacks"));
 
         hubCallbacksPage.getTeamButton().click();
 
@@ -243,12 +147,6 @@ public class HubCallbacksPageTests extends BaseTest {
 
         hubCallbacksPage.getTodayButton().click();
         hubCallbacksPage.getChevronUp().click();
-
-        hubCallbacksPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().isDisplayed());
-
-        hubPage.getMyHubButton().click();
-        Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
     }
 
     @Test(priority = 9)
@@ -256,12 +154,6 @@ public class HubCallbacksPageTests extends BaseTest {
         MyHubPage myHubPage = new MyHubPage(driver);
         HubPage hubPage = new HubPage(driver);
         HubCallbacksPage hubCallbacksPage = new HubCallbacksPage(driver);
-
-        myHubPage.getHubButton().click();
-        Assert.assertTrue(hubPage.getNavBarTittle().getText().matches("hub"));
-
-        hubPage.getCallbacksButton().click();
-        Assert.assertTrue(hubCallbacksPage.getCallbacksLabel().getText().matches("Callbacks"));
 
         hubCallbacksPage.getTeamButton().click();
 

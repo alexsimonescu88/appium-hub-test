@@ -17,7 +17,7 @@ public class HubCompaniesSearchPage extends BasePage {
     @FindBy(xpath = "//XCUIElementTypeTextField")
     private WebElement searchField;
 
-    @FindBy(id = "multiply.circle.fill")
+    @FindBy(id = "X Circle")
     private WebElement clearSearchButton;
 
     @FindBy(xpath = "//XCUIElementTypeScrollView")

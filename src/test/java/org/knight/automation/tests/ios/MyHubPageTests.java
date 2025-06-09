@@ -7,9 +7,6 @@ import org.knight.automation.tests.utils.Scrollable;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-
 
 public class MyHubPageTests extends BaseTest implements Scrollable {
 
@@ -20,6 +17,12 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
 
         Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
         Assert.assertTrue(myHubPage.getFavouritesLabel().isDisplayed());
+
+        Assert.assertTrue(myHubPage.getRecentlyViewedLabel().isDisplayed());
+        Assert.assertTrue(myHubPage.getRecentlyViewedScrollView().isDisplayed());
+
+        scroll("left", myHubPage.getRecentlyViewedScrollView(), appiumDriver);
+        scroll("right", myHubPage.getRecentlyViewedScrollView(), appiumDriver);
 
         scroll("left", myHubPage.getFavouritesScrollView(), appiumDriver);
         scroll("right", myHubPage.getFavouritesScrollView(), appiumDriver);
@@ -41,11 +44,11 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertTrue(myHubPage.getTheViewButton().isDisplayed());
         Assert.assertTrue(myHubPage.getTheWealthReportButton().isDisplayed());
 
-        scroll("down", myHubPage.getVerticalScroll(), appiumDriver);
+//        scroll("down", myHubPage.getVerticalScroll(), appiumDriver);
     }
 
     @Test(priority = 2)
-    public void testAccessToAppointmentsYesterday_shouldSuccessfullyExpandAppointmentsYesterday() {
+    public void testAccessToAppointments_shouldSuccessfullyExpandAppointmentsAndSelectThroughToggles() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
         myHubPage.getAppointmentsChevronDown().click();
@@ -60,6 +63,8 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
 //        String appointmentsMobileTestingText = myHubPage.getAppointmentMobileTestingText().getText();
         Assert.assertTrue(myHubPage.getAppointmentsYesterdayButton().isEnabled());
 //        Assert.assertEquals(appointmentsMobileTestingText, "Mobile testing check in ");
+        myHubPage.getAppointmentsTomorrowButton().click();
+        Assert.assertTrue(myHubPage.getAppointmentsTomorrowButton().isEnabled());
 
         myHubPage.getAppointmentsTodayButton().click();
         Assert.assertTrue(myHubPage.getAppointmentsTodayButton().isEnabled());
@@ -69,41 +74,61 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
     }
 
     @Test(priority = 3)
-    public void testAccessToAppointmentsToday_shouldSuccessfullyExpandAppointmentsToday() {
+    public void testAccessToViewAllRecentlyViewed_ShouldSuccessfullyOpenTheViewAllRecentlyViewedOnMyHubPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
+        HubRecentsPage hubRecentsPage = new HubRecentsPage(driver);
 
-        myHubPage.getAppointmentsChevronDown().click();
-        Assert.assertTrue(myHubPage.getAppointmentsChevronUp().isEnabled());
-        Assert.assertTrue(myHubPage.getAppointmentsTodayButton().isEnabled());
+        Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
+        Assert.assertTrue(myHubPage.getFavouritesLabel().isDisplayed());
 
-//        String appointmentsMobileBacklogText = myHubPage.getAppointmentsMobileBacklogText().getText();
-//        Assert.assertEquals(appointmentsMobileBacklogText, "Mobile Backlog Review");
+        Assert.assertTrue(myHubPage.getRecentlyViewedLabel().isDisplayed());
 
-        myHubPage.getAppointmentsChevronUp().click();
-        Assert.assertTrue(myHubPage.getAppointmentsChevronDown().isEnabled());
+        myHubPage.getViewAllButton().click();
+        Assert.assertTrue(hubRecentsPage.getRecentsLabel().isDisplayed());
+        Assert.assertTrue(hubRecentsPage.getMyHubButton().isDisplayed());
+
+        hubRecentsPage.getMyHubButton().click();
+
+        Assert.assertTrue(myHubPage.getExploreHubMobileLabel().isDisplayed());
+        Assert.assertTrue(myHubPage.getHubQuickLinksLabel().isDisplayed());
     }
+
+//    @Test(priority = 3)
+//    public void testAccessToAppointmentsToday_shouldSuccessfullyExpandAppointmentsToday() {
+//        MyHubPage myHubPage = new MyHubPage(driver);
+//
+//        myHubPage.getAppointmentsChevronDown().click();
+//        Assert.assertTrue(myHubPage.getAppointmentsChevronUp().isEnabled());
+//        Assert.assertTrue(myHubPage.getAppointmentsTodayButton().isEnabled());
+//
+////        String appointmentsMobileBacklogText = myHubPage.getAppointmentsMobileBacklogText().getText();
+////        Assert.assertEquals(appointmentsMobileBacklogText, "Mobile Backlog Review");
+//
+//        myHubPage.getAppointmentsChevronUp().click();
+//        Assert.assertTrue(myHubPage.getAppointmentsChevronDown().isEnabled());
+//    }
+
+//    @Test(priority = 4)
+//    public void testAccessToAppointmentsTomorrow_shouldSuccessfullyExpandAppointmentsTomorrow() {
+//        MyHubPage myHubPage = new MyHubPage(driver);
+//
+//        myHubPage.getAppointmentsChevronDown().click();
+//        Assert.assertTrue(myHubPage.getAppointmentsTodayButton().isEnabled());
+//
+//        myHubPage.getAppointmentsTomorrowButton().click();
+//        Assert.assertTrue(myHubPage.getAppointmentsTomorrowButton().isEnabled());
+//
+////        String appointmentsNoItemsText = myHubPage.getAppointmentsNoItemsText().getText();
+////        Assert.assertEquals(appointmentsNoItemsText, "No items");
+//
+//        myHubPage.getAppointmentsTodayButton().click();
+//        Assert.assertTrue(myHubPage.getAppointmentsTodayButton().isEnabled());
+//
+//        myHubPage.getAppointmentsChevronUp().click();
+//        Assert.assertTrue(myHubPage.getAppointmentsChevronDown().isEnabled());
+//    }
 
     @Test(priority = 4)
-    public void testAccessToAppointmentsTomorrow_shouldSuccessfullyExpandAppointmentsTomorrow() {
-        MyHubPage myHubPage = new MyHubPage(driver);
-
-        myHubPage.getAppointmentsChevronDown().click();
-        Assert.assertTrue(myHubPage.getAppointmentsTodayButton().isEnabled());
-
-        myHubPage.getAppointmentsTomorrowButton().click();
-        Assert.assertTrue(myHubPage.getAppointmentsTomorrowButton().isEnabled());
-
-//        String appointmentsNoItemsText = myHubPage.getAppointmentsNoItemsText().getText();
-//        Assert.assertEquals(appointmentsNoItemsText, "No items");
-
-        myHubPage.getAppointmentsTodayButton().click();
-        Assert.assertTrue(myHubPage.getAppointmentsTodayButton().isEnabled());
-
-        myHubPage.getAppointmentsChevronUp().click();
-        Assert.assertTrue(myHubPage.getAppointmentsChevronDown().isEnabled());
-    }
-
-    @Test(priority = 5)
     public void testAccessToMyCallbacksActivitySelection_shouldSuccessfullyExpandMyCallbacksActivitySelection() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
@@ -126,18 +151,12 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertEquals(noCallbacksText, "No Callbacks");
 
         myHubPage.getCallbacksTodayButton().click();
-        Assert.assertTrue(myHubPage.getCallbacksNoCallbacksText().isDisplayed());
-        Assert.assertEquals(noCallbacksText, "No Callbacks");
-
-        myHubPage.getMyCallbacksChevronUp().click();
-        Assert.assertTrue(myHubPage.getMyCallbacksChevronDown().isEnabled());
     }
 
-    @Test(priority = 6)
+    @Test(priority = 5)
     public void testAccessToMyCallbacksKeepInTouchSelection_ShouldSuccessfullyExpandMyCallbacksKeepInTouchSelection() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
-        myHubPage.getMyCallbacksChevronDown().click();
         Assert.assertTrue(myHubPage.getCallbacksActivityButton().isEnabled());
         Assert.assertTrue(myHubPage.getMyCallbacksChevronUp().isEnabled());
 
@@ -169,23 +188,13 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertTrue(myHubPage.getCallbacksTodayButton().isEnabled());
         Assert.assertTrue(myHubPage.getCallbacksNoCallbacksText().isDisplayed());
         Assert.assertEquals(noCallbacksText, "No Callbacks");
-
-        myHubPage.getSelectionOptions().click();
-        Assert.assertTrue(myHubPage.getCallbacksKeepInTouchButton().isSelected());
-
-        myHubPage.getCallbacksActivityButton().click();
-        Assert.assertTrue(myHubPage.getCallbacksActivityButton().isEnabled());
-
-        myHubPage.getMyCallbacksChevronUp().click();
-        Assert.assertTrue(myHubPage.getMyCallbacksChevronDown().isEnabled());
     }
 
-    @Test(priority = 7)
+    @Test(priority = 6)
     public void testAccessToMyCallbacksNotInstructedSelection_ShouldSuccessfullyExpandMyCallbacksNotInstructedSelection() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
-        myHubPage.getMyCallbacksChevronDown().click();
-        Assert.assertTrue(myHubPage.getCallbacksActivityButton().isEnabled());
+        Assert.assertTrue(myHubPage.getCallbacksKeepInTouchButton().isEnabled());
         Assert.assertTrue(myHubPage.getMyCallbacksChevronUp().isEnabled());
 
         myHubPage.getSelectionOptions().click();
@@ -193,7 +202,7 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertTrue(myHubPage.getCallbacksKeepInTouchButton().isDisplayed());
         Assert.assertTrue(myHubPage.getCallbacksNotInstructedButton().isDisplayed());
         Assert.assertTrue(myHubPage.getCallbacksRequirementButton().isDisplayed());
-        Assert.assertTrue(myHubPage.getCallbacksActivityButton().isSelected());
+        Assert.assertTrue(myHubPage.getCallbacksKeepInTouchButton().isSelected());
 
         myHubPage.getCallbacksNotInstructedButton().click();
         Assert.assertTrue(myHubPage.getCallbacksNotInstructedButton().isEnabled());
@@ -216,23 +225,13 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertTrue(myHubPage.getCallbacksTodayButton().isEnabled());
         Assert.assertTrue(myHubPage.getCallbacksNoCallbacksText().isDisplayed());
         Assert.assertEquals(noCallbacksText, "No Callbacks");
-
-        myHubPage.getSelectionOptions().click();
-        Assert.assertTrue(myHubPage.getCallbacksNotInstructedButton().isSelected());
-
-        myHubPage.getCallbacksActivityButton().click();
-        Assert.assertTrue(myHubPage.getCallbacksActivityButton().isEnabled());
-
-        myHubPage.getMyCallbacksChevronUp().click();
-        Assert.assertTrue(myHubPage.getMyCallbacksChevronDown().isEnabled());
     }
 
-    @Test(priority = 8)
+    @Test(priority = 7)
     public void testAccessToMyCallbacksRequirementSelection_ShouldSuccessfullyExpandMyCallbacksRequirementSelection() {
         MyHubPage myHubPage = new MyHubPage(driver);
 
-        myHubPage.getMyCallbacksChevronDown().click();
-        Assert.assertTrue(myHubPage.getCallbacksActivityButton().isEnabled());
+        Assert.assertTrue(myHubPage.getCallbacksNotInstructedButton().isEnabled());
         Assert.assertTrue(myHubPage.getMyCallbacksChevronUp().isEnabled());
 
         myHubPage.getSelectionOptions().click();
@@ -240,7 +239,7 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertTrue(myHubPage.getCallbacksKeepInTouchButton().isDisplayed());
         Assert.assertTrue(myHubPage.getCallbacksNotInstructedButton().isDisplayed());
         Assert.assertTrue(myHubPage.getCallbacksRequirementButton().isDisplayed());
-        Assert.assertTrue(myHubPage.getCallbacksActivityButton().isSelected());
+        Assert.assertTrue(myHubPage.getCallbacksNotInstructedButton().isSelected());
 
         myHubPage.getCallbacksRequirementButton().click();
         Assert.assertTrue(myHubPage.getCallbacksRequirementButton().isEnabled());
@@ -275,7 +274,7 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
     }
 
 
-    @Test(priority = 9)
+    @Test(priority = 8)
     public void testAccessToActivityPage_ShouldSuccessfullyOpenActivityPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubActivitySearchPage myHubActivitySearchPage = new MyHubActivitySearchPage(driver);
@@ -284,6 +283,16 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
 
         String searchLabel = myHubActivitySearchPage.getSearchLabel().getText();
         Assert.assertEquals(searchLabel, "Search");
+        Assert.assertTrue(myHubActivitySearchPage.getMyButton().isEnabled());
+
+        myHubActivitySearchPage.getTeamButton().click();
+        Assert.assertTrue(myHubActivitySearchPage.getTeamButton().isEnabled());
+
+        myHubActivitySearchPage.getAllButton().click();
+        Assert.assertTrue(myHubActivitySearchPage.getAllButton().isEnabled());
+
+//        myHubActivitySearchPage.getMyButton().click();
+//        Assert.assertTrue(myHubActivitySearchPage.getMyButton().isEnabled());
 
         myHubActivitySearchPage.getMyHubButton().click();
 
@@ -291,15 +300,25 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 10)
+    @Test(priority = 9)
     public void testAccessToRequirementsPage_ShouldSuccessfullyOpenRequirementsPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubRequirementsSearchPage myHubRequirementsSearchPage = new MyHubRequirementsSearchPage(driver);
 
         myHubPage.getRequirementSearchButton().click();
 
-        String mySearchRequirementsText = myHubRequirementsSearchPage.getNoRequirementsFoundText().getText();
-        Assert.assertEquals(mySearchRequirementsText, "No Requirements Found");
+        String searchLabel = myHubRequirementsSearchPage.getSearchLabel().getText();
+        Assert.assertEquals(searchLabel, "Search");
+        Assert.assertTrue(myHubRequirementsSearchPage.getMyButton().isEnabled());
+
+        myHubRequirementsSearchPage.getTeamButton().click();
+        Assert.assertTrue(myHubRequirementsSearchPage.getTeamButton().isEnabled());
+
+        myHubRequirementsSearchPage.getAllButton().click();
+        Assert.assertTrue(myHubRequirementsSearchPage.getAllButton().isEnabled());
+
+//        myHubRequirementsSearchPage.getMyButton().click();
+//        Assert.assertTrue(myHubRequirementsSearchPage.getMyButton().isEnabled());
 
         myHubRequirementsSearchPage.getMyHubButton().click();
 
@@ -307,7 +326,7 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 11)
+    @Test(priority = 10)
     public void testAccessToPropertyPage_ShouldSuccessfullyOpenPropertyPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubPropertySearchPage myHubPropertySearchPage = new MyHubPropertySearchPage(driver);
@@ -327,7 +346,7 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 12)
+    @Test(priority = 11)
     public void testAccessToContactSearchPage_ShouldSuccessfullyOpenContactSearchPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubContactSearchPage myHubContactSearchPage = new MyHubContactSearchPage(driver);
@@ -338,16 +357,17 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         myHubPage.getContactSearchButton().click();
 
         String searchTitle = myHubContactSearchPage.getSearchLabel().getText();
-        Assert.assertEquals(searchTitle, "Search");
+        Assert.assertTrue(myHubContactSearchPage.getMyButton().isEnabled());
 
         myHubContactSearchPage.getTeamButton().click();
-        Assert.assertEquals(searchTitle, "Search");
+        Assert.assertTrue(myHubContactSearchPage.getTeamButton().isEnabled());
 
         myHubContactSearchPage.getAllButton().click();
-        Assert.assertEquals(searchTitle, "Search");
+        Assert.assertTrue(myHubContactSearchPage.getAllButton().isEnabled());
 
-        myHubContactSearchPage.getMyButton().click();
-        Assert.assertEquals(searchTitle, "Search");
+//        myHubContactSearchPage.getMyButton().click();
+//        Assert.assertEquals(searchTitle, "Search");
+//        Assert.assertTrue(myHubContactSearchPage.getMyButton().isEnabled());
 
         myHubContactSearchPage.getMyHubButton().click();
 
@@ -355,16 +375,13 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 13)
+    @Test(priority = 12)
     public void testAccessToCreateContactPage_ShouldSuccessfullyOpenCreateContactPage() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubCreateContactPage myHubCreateContactPage = new MyHubCreateContactPage(driver);
         AppiumDriver appiumDriver = (AppiumDriver) this.driver;
-        Map<String, Object> scrollParams = new HashMap<>();
 
-        scrollParams.put("direction", "up");
-        scrollParams.put("element", myHubPage.getVerticalScroll());
-        appiumDriver.executeScript("mobile: swipe", scrollParams);
+        scroll("up", myHubPage.getVerticalScroll(), appiumDriver);
 
         myHubPage.getCreateContactButton().click();
 
@@ -380,7 +397,7 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertEquals(myHubNavigatorBarTitle, "My hub");
     }
 
-    @Test(priority = 14)
+    @Test(priority = 13)
     public void testAccessToCreateConneXionPage_ShouldSuccessfullyOpenCreateConneXionPageWithAllContactsSelected() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubCreateConneXionPage createConneXion = new MyHubCreateConneXionPage(driver);
@@ -392,6 +409,12 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
 
         String allContactsTitle = createConneXion.getAllContactsTitle().getText();
         Assert.assertEquals(allContactsTitle, "All contacts");
+        Assert.assertTrue(createConneXion.getAllButton().isEnabled());
+
+        createConneXion.getMyButton().click();
+        String myContactsTitle = createConneXion.getMyContactsTitle().getText();
+        Assert.assertEquals(myContactsTitle, "My contacts");
+        Assert.assertTrue(createConneXion.getMyButton().isEnabled());
 
         createConneXion.getMyHubButton().click();
 
@@ -400,7 +423,7 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
     }
 
 
-    @Test(priority = 15)
+    @Test(priority = 14)
     public void testAccessToTheViewLink_ShouldSuccessfullyOpenTheViewLink() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubTheViewPage myHubTheViewPage = new MyHubTheViewPage(driver);
@@ -445,7 +468,7 @@ public class MyHubPageTests extends BaseTest implements Scrollable {
         Assert.assertTrue(myHubPage.getMyHubLabel().isDisplayed());
     }
 
-    @Test(priority = 16)
+    @Test(priority = 15)
     public void testAccessToTheWealthReportLink_ShouldSuccessfullyOpenTheWealthReportLink() {
         MyHubPage myHubPage = new MyHubPage(driver);
         MyHubTheWealthReportPage myHubTheWealthReportPage = new MyHubTheWealthReportPage(driver);

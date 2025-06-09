@@ -29,7 +29,7 @@ public class MyHubActivitySearchPage extends BasePage {
     @FindBy(id = "No Activities Found")
     private WebElement noActivitiesFoundText;
 
-    @FindBy(id = "multiply.circle.fill")
+    @FindBy(id = "X Circle")
     private WebElement clearTextButton;
 
     @FindBy(xpath = "(//XCUIElementTypeOther[@name=\"Vertical scroll bar, 7 pages\"])[2]")

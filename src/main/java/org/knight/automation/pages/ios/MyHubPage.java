@@ -1,5 +1,6 @@
 package org.knight.automation.pages.ios;
 
+import com.sun.jna.platform.win32.COM.Wbemcli;
 import org.knight.automation.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,6 +38,15 @@ public class MyHubPage extends BasePage {
 //
 //    @FindBy(id = "Mobile Backlog Review")
 //    private WebElement appointmentsMobileBacklogText;
+
+    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Home_Button_RecentsViewAll\"]")
+    private WebElement viewAllButton;
+
+    @FindBy(id = "Recently Viewed")
+    private WebElement recentlyViewedLabel;
+
+    @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"hub Uat\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]")
+    private WebElement recentlyViewedScrollView;
 
     @FindBy(id = "Favourites")
     private WebElement favouritesLabel;
@@ -172,6 +182,18 @@ public class MyHubPage extends BasePage {
 
     public WebElement getFavouritesLabel() {
         return waitForVisibility(favouritesLabel, 20);
+    }
+
+    public WebElement getViewAllButton() {
+        return waitForClickability(viewAllButton, 20);
+    }
+
+    public WebElement getRecentlyViewedLabel() {
+        return waitForVisibility(recentlyViewedLabel, 20);
+    }
+
+    public WebElement getRecentlyViewedScrollView() {
+        return waitForClickability(recentlyViewedScrollView, 20);
     }
 
     public WebElement getFavouritesLastCard() {
